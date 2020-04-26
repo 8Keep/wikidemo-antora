@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>points :: jMonkeyEngine Documentation</title>
+    <meta name="generator" content="Antora 2.3.0">
+    <link rel="stylesheet" href="../../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../../..">jMonkeyEngine Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="jme3" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../../documentation.html">Test</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../documentation.html">jMonkeyEngine 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Test</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Test</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../../documentation.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../documentation.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../documentation.html">Test</a></li>
+    <li><a href="points.html">points</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/davisro/dev/wikidemo-antora/docs/modules/ROOT/pages/jme3/contributions/entitysystem/points.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">points</h1>
+<div class="sect1">
+<h2 id="_es_design_goals_explained"><a class="anchor" href="#_es_design_goals_explained"></a>ES Design goals explained</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This page revive and explain more about points of design goals and implementations for an ES and its usefulness (means features) to corporate with other Java and game software techs and layers.</p>
+</div>
+<div class="paragraph">
+<p>Theoricaly an Java ES done right should be:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Pure data : very debatable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Mutable : as bean with setter and getter</p>
+</li>
+<li>
+<p>Immutate : as bean with getter, should be replace if changed.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Multi-threading, concurency enable : very debatable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>As my experience, pure data or not is not clear contract to multi-threading success. Consider other things happen outside of ES scope, so it not an solid waranty that those component will not be touched by any other thread.</p>
+</li>
+<li>
+<p>Also if there is a contract that no other thread touching those data, in Java style via synchonization or other paradigm like actor… multi-threading also consider success but just more complicated!</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Communication: very debatable</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Event messaging enable</p>
+</li>
+<li>
+<p>No event or messaging : update beat, no need of inter-com or events. How can we do network messaging?</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Is database (and other kind of persistent) friendly</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Save to XML (file, serialized)?</p>
+</li>
+<li>
+<p>Send over network?</p>
+</li>
+<li>
+<p>Change sets are resembling Databse concept, what about tranactions?</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Is enterprise friendly (expanable/ extensible/ modulizable)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Spring, as lazy loaded, injected?</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Script possibilities</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Can be script, non trivial work in pure data!</p>
+</li>
+<li>
+<p>Can be use with other JVM language than java like groovy, or scala, jython?</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Restrictions and limitation</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>No dynamic Java object methods in Component ? What about Entities and Systems ( Processors)</p>
+</li>
+<li>
+<p>An overal way to manage and config Systems, freely chose? How to hook to its routine?</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Depedencies</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The separation of components are clear, as no dependencies at all. Hard cored, scripted or injected will break the overal contract!</p>
+</li>
+<li>
+<p>The separation of Entities. What about depedencies of entities? Ex: parent/ child relationship in JME spatial. How the framework handle that?</p>
+</li>
+<li>
+<p>The separation of Systems. Ex: any contract about that?</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../../_/js/site.js"></script>
+<script async src="../../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
