@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>development :: jMonkeyEngine Documentation</title>
+    <link rel="canonical" href="https://8keep.github.io/wikidemo-antora/jme3/1/sdk/development.html">
+    <meta name="keywords" content="documentation, sdk, contribute">
+    <meta name="generator" content="Antora 2.3.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://8keep.github.io/wikidemo-antora">jMonkeyEngine Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="jme3" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../documentation.html">Test</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation.html">jMonkeyEngine 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Test</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Test</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../documentation.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../documentation.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../documentation.html">Test</a></li>
+    <li><a href="development.html">development</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/davisro/dev/wikidemo-antora/docs/modules/ROOT/pages/sdk/development.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">development</h1>
+<div class="sect1">
+<h2 id="_developing_for_jmonkeyengine_sdk"><a class="anchor" href="#_developing_for_jmonkeyengine_sdk"></a>Developing for jMonkeyEngine SDK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Note that all info is subject to change while jMonkeyEngine SDK is still in beta!</em></p>
+</div>
+<div class="paragraph">
+<p>In general, developing plugins for jMonkeyEngine SDK is not much different than creating plugins for the NetBeans Platform which in turn is not much different than creating Swing applications. You can use jMonkeyEngine SDK to develop plugins, be it for personal use or to contribute to the community.</p>
+</div>
+<div class="paragraph">
+<p>If you feel like you want to make an addition to jMonkeyEngine SDK, don&#8217;t hesitate to contact the jme team regardless of your knowledge in NetBeans platform development. For new plugins, the basic project creation and layout of the plugin can always be handled by a core developer and you can go on from there fleshing out the plugin. By using the Platform functions, your plugin feels more like a Platform application (global save button, file type support etc.).</p>
+</div>
+<div class="sect2">
+<h3 id="_creating_plugins_and_components"><a class="anchor" href="#_creating_plugins_and_components"></a>Creating plugins and components</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="development/setup.html" class="page">Creating a plugin</a></p>
+</li>
+<li>
+<p><a href="development/general.html" class="page">Creating components</a></p>
+</li>
+<li>
+<p><a href="build_platform.html" class="page">Building the jME SDK from scratch</a> (not necessary for plugin development, only for contributors)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_extending_jmonkeyengine_sdk"><a class="anchor" href="#_extending_jmonkeyengine_sdk"></a>Extending jMonkeyEngine SDK</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="development/scene.html" class="page">The Main Scene</a></p>
+</li>
+<li>
+<p><a href="development/sceneexplorer.html" class="page">The Scene Explorer</a></p>
+</li>
+<li>
+<p><a href="development/projects_assets.html" class="page">Projects and Assets</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_recipes"><a class="anchor" href="#_recipes"></a>Recipes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="development/extension_library.html" class="page">Create a library plugin from a jar file</a></p>
+</li>
+<li>
+<p><a href="development/model_loader.html" class="page">Create a new or custom model filetype and loader</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_general_notes"><a class="anchor" href="#_general_notes"></a>General Notes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Remember the scene runs on the render thread and most everything you do in the plugin (button events etc.) runs on the AWT thread, always encapsulate calls to either side correctly via Callables/Runnables or register as an AppState to the SceneApplication to have an update() call by the render thread.</strong></p>
+</li>
+<li>
+<p>Although the scene can be accessed at any time via SceneApplication.getApplication() it is not recommended to modify the scene like that. Other plugins might be accessing the scene and updates will not be properly recognized. Use the sceneRequest object and the lookup of selected nodes and files to access things like the assetManager etc.</p>
+</li>
+<li>
+<p>It became a standard in jMonkeyEngine SDK to start the name of methods that execute directly on the OpenGL thread with “do e.g “doMoveSpatial, this makes identifying threading issues easier.</p>
+</li>
+<li>
+<p>The AssetManager of jme3 is threadsafe and can be used from any thread to load assets</p>
+</li>
+<li>
+<p>You can get access to the ProjectAssetManager via the Lookup of a JmeSpatial and other objects</p>
+</li>
+<li>
+<p>Use org.openide.filesystems.FileObject instead of java.io.File for file access, it always uses system-independent “/ path separators and has some more advanced functions that make file handling easier.</p>
+</li>
+<li>
+<p>You can get a file from a string using Repository.getDefault().getDefaultFileSystem().getRoot().getFileObject(“aaa/bbb/ccc/whatever);</p>
+</li>
+<li>
+<p>You can convert a regular java File to a FileObject and vice versa using org.openide.filesystems.FileUtil</p>
+</li>
+<li>
+<p>If you have problems with unresolved classes, check if all needed Libraries are registered in the settings of your Project. To find out which library contains a certain class, just enter the name in the library search field.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_teminology_used_here"><a class="anchor" href="#_teminology_used_here"></a>Teminology used here</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>A “plugin” is anything you can tick in the plugin manager of the SDK. It can contain editors, simple “Java SE Libraries” that you can add to your projects as jar files and other things like project templates etc.</p>
+</li>
+<li>
+<p>A “module” is the project type that allows you to create plugins, strictly speaking all plugins are modules but there can be modules that are never shown in the plugin list and only exist as dependencies of other modules.</p>
+</li>
+<li>
+<p>A “library” is an entry for a jar file (and optionally sources and javadocs) which can be added to a SDK project to be used and distributed with it</p>
+</li>
+<li>
+<p>An “extension” is a generic name for stuff that extends the jME engine, like pathfinding algorithms or anything that can be used at the game runtime..</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So if you have some cool code that others can use in their games too, you would make your extension a library by creating a module that the users can download as a plugin :)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_handy_things_in_jmonkeyengine_sdk_core"><a class="anchor" href="#_handy_things_in_jmonkeyengine_sdk_core"></a>Handy things in jMonkeyEngine SDK Core</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>com.jme3.gde.core.scene.controller</p>
+<div class="ulist">
+<ul>
+<li>
+<p>AbstractCameraController → A basic camera control for plugins, used by SimpleSceneComposer and “View Model</p>
+</li>
+<li>
+<p>SceneToolController → A basic controller for having selection, cursor etc. displayed in the scene, used by SimpleSceneComposer</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>com.jme3.gde.core.scene</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OffViewPanel → A panel that renders a 3d scene in a preview and displays it in a lightweight swing panel</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>com.jme3.gde.core.util</p>
+<div class="ulist">
+<ul>
+<li>
+<p>DataObjectSaveNode → Allows enabling the save all button by using any file and implementing the SvaeCookie yourself.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Learn more about NetBeans Plugin Development at <a href="http://platform.netbeans.org">http://platform.netbeans.org</a></p>
+</div>
+<div class="paragraph">
+<p>Also check out this Essential NetBeans Platform Refcard: <a href="http://refcardz.dzone.com/refcardz/essential-netbeans-platform">http://refcardz.dzone.com/refcardz/essential-netbeans-platform</a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>use_own_jme :: jMonkeyEngine Documentation</title>
+    <link rel="canonical" href="https://8keep.github.io/wikidemo-antora/jme3/1/sdk/use_own_jme.html">
+    <meta name="keywords" content="documentation, sdk, project, builds">
+    <meta name="generator" content="Antora 2.3.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://8keep.github.io/wikidemo-antora">jMonkeyEngine Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="jme3" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../documentation.html">Test</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation.html">jMonkeyEngine 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Test</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Test</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../documentation.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../documentation.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../documentation.html">Test</a></li>
+    <li><a href="use_own_jme.html">use_own_jme</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/davisro/dev/wikidemo-antora/docs/modules/ROOT/pages/sdk/use_own_jme.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">use_own_jme</h1>
+<div class="sect1">
+<h2 id="_how_to_integrate_your_own_jme3_compile_in_jmonkeyengine_sdk_projects"><a class="anchor" href="#_how_to_integrate_your_own_jme3_compile_in_jmonkeyengine_sdk_projects"></a>How to integrate your own jME3 compile in jMonkeyEngine SDK projects</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="../jme3/build_jme3_sources_with_netbeans.html" class="page">Download jme3 project</a></p>
+</li>
+<li>
+<p>Make your changes</p>
+</li>
+<li>
+<p>Compile jme3 project</p>
+</li>
+<li>
+<p>Go to <code><span class="menuseq"><b class="menu">Tools</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Libraries</b></span></code></p>
+</li>
+<li>
+<p>Press <b class="button">New Library</b></p>
+</li>
+<li>
+<p>Name it &#8220;jme3-modified&#8221;</p>
+</li>
+<li>
+<p>Press <b class="button">Add Jar/Folder</b></p>
+</li>
+<li>
+<p>Select all JAR files from the <code>dist</code> dir of the compiled jme3 version</p>
+</li>
+<li>
+<p>Add the <code>src</code> folder of the jme3 project in the &#8220;sources&#8221; tab</p>
+</li>
+<li>
+<p>Optionally javadoc in the &#8220;javadoc&#8221; tab</p>
+</li>
+<li>
+<p>Press <b class="button">OK</b></p>
+</li>
+<li>
+<p><b class="button">RMB</b> select your project and choose &#8220;Properties&#8221;</p>
+</li>
+<li>
+<p>Select &#8220;Libraries&#8221; to the left</p>
+</li>
+<li>
+<p>Remove the &#8220;jme3&#8221; library</p>
+</li>
+<li>
+<p>Press <b class="button">Add Library</b> and select the &#8220;jme3-modified&#8221; library</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

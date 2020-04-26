@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jMonkeyEngine SDK: Vehicle Creator :: jMonkeyEngine Documentation</title>
+    <link rel="canonical" href="https://8keep.github.io/wikidemo-antora/jme3/1/sdk/vehicle_creator.html">
+    <meta name="keywords" content="documentation, sdk, tool, asset, editor, physics">
+    <meta name="generator" content="Antora 2.3.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://8keep.github.io/wikidemo-antora">jMonkeyEngine Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="jme3" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../documentation.html">Test</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation.html">jMonkeyEngine 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Test</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Test</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../documentation.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../documentation.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../documentation.html">Test</a></li>
+    <li><a href="vehicle_creator.html">jMonkeyEngine SDK: Vehicle Creator</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/davisro/dev/wikidemo-antora/docs/modules/ROOT/pages/sdk/vehicle_creator.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">jMonkeyEngine SDK: Vehicle Creator</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Best results when car is facing in z direction (towards you).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usage"><a class="anchor" href="#_usage"></a>Usage</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select a j3o that contains a vehicle model and press the vehicle button (or right-click → edit vehicle)</p>
+</li>
+<li>
+<p>The VehicleCreator automatically adds a PhysicsVehicleControl to the rootNode of the model if there is none</p>
+</li>
+<li>
+<p>Select the Geometry or Node that contains the chassis in the SceneExplorer and press “create hull shape from selected</p>
+</li>
+<li>
+<p>Select a Geometry that contains a wheel and press “make selected spatial wheel, select the “front wheel checkboxes for front wheels</p>
+</li>
+<li>
+<p>Do so for all wheels</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>New wheels will get the current suspension settings, you can edit single wheels via the SceneExplorer (update VehicleControl if wheels dont show up) or apply settings created with the settings generator to wheel groups.</p>
+</div>
+<div class="paragraph">
+<p>Press the “test vehicle button to drive the vehicle, use WASD to control, Enter to reset.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_known_issues"><a class="anchor" href="#_known_issues"></a>Known Issues</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Don&#8217;t save while testing the vehicle, you will save the location and acceleration info in the j3o.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_code_sample"><a class="anchor" href="#_code_sample"></a>Code Sample</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Code Example to load vehicle:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">//load vehicle and access VehicleControl
+Spatial car=assetManager.loadModel("Models/MyCar.j3o");
+VehicleControl control=car.getControl(VehicleControl.class);
+rootNode.attachChild(car);
+physicsSpace.add(control);
+
+//then use the control to control the vehicle:
+control.setPhysicsLocation(new Vector3f(10,2,10));
+control.accelerate(100);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

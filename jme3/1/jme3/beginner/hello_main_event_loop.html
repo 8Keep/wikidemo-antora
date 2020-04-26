@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>jMonkeyEngine 3 Tutorial (4) - Hello Update Loop :: jMonkeyEngine Documentation</title>
+    <link rel="canonical" href="https://8keep.github.io/wikidemo-antora/jme3/1/jme3/beginner/hello_main_event_loop.html">
+    <meta name="keywords" content="documentation, state, states, intro, beginner, control, loop">
+    <meta name="generator" content="Antora 2.3.0">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://8keep.github.io/wikidemo-antora">jMonkeyEngine Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="jme3" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../documentation.html">Test</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../documentation.html">jMonkeyEngine 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Test</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Test</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../documentation.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../documentation.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../documentation.html">Test</a></li>
+    <li><a href="hello_main_event_loop.html">jMonkeyEngine 3 Tutorial (4) - Hello Update Loop</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/davisro/dev/wikidemo-antora/docs/modules/ROOT/pages/jme3/beginner/hello_main_event_loop.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">jMonkeyEngine 3 Tutorial (4) - Hello Update Loop</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Previous: <a href="hello_asset.html" class="page">Hello Assets</a>,
+Next: <a href="hello_input_system.html" class="page">Hello Input System</a></p>
+</div>
+<div class="paragraph">
+<p>Now that you know how to load assets, such as 3D models, you want to implement some gameplay that uses these assets. In this tutorial we look at the update loop. The update loop of your game is where the action happens.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_code_sample"><a class="anchor" href="#_code_sample"></a>Code Sample</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">package jme3test.helloworld;
+
+import com.jme3.app.SimpleApplication;
+import com.jme3.material.Material;
+import com.jme3.math.ColorRGBA;
+import com.jme3.scene.Geometry;
+import com.jme3.scene.shape.Box;
+
+/** Sample 4 - how to trigger repeating actions from the main event loop.
+ * In this example, you use the loop to make the player character
+ * rotate continuously. */
+public class HelloLoop extends SimpleApplication {
+
+    public static void main(String[] args){
+        HelloLoop app = new HelloLoop();
+        app.start();
+    }
+
+    protected Geometry player;
+
+    @Override
+    public void simpleInitApp() {
+        /** this blue box is our player character */
+        Box b = new Box(1, 1, 1);
+        player = new Geometry("blue cube", b);
+        Material mat = new Material(assetManager,
+          "Common/MatDefs/Misc/Unshaded.j3md");
+        mat.setColor("Color", ColorRGBA.Blue);
+        player.setMaterial(mat);
+        rootNode.attachChild(player);
+    }
+
+    /* Use the main event loop to trigger repeating actions. */
+    @Override
+    public void simpleUpdate(float tpf) {
+        // make the player rotate:
+        player.rotate(0, 2*tpf, 0);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Build and run the file: You see a constantly rotating cube.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_understanding_the_code"><a class="anchor" href="#_understanding_the_code"></a>Understanding the Code</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Compared to our previous code samples you note that the player Geometry is now a class field. This is because we want the update loop to be able to access and transform this Geometry. As usual, we initialize the player object in the <code>simpleInitApp()</code> method.</p>
+</div>
+<div class="paragraph">
+<p>Now have a closer look at the <code>simpleUpdate()</code> method – this is the update loop.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>player.rotate(0, 2*tpf, 0);</code> line changes the rotation of the player object.</p>
+</li>
+<li>
+<p>We use the <code>tpf</code> variable (&#8220;time per frame&#8221;) to time this action depending on the current frames per second rate. This simply means that the cube rotates with the same speed on fast and slow machines, and the game remains playable.</p>
+</li>
+<li>
+<p>When the game runs, the rotate() code is executed again and again.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_using_the_update_loop"><a class="anchor" href="#_using_the_update_loop"></a>Using the Update Loop</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A rotating object is just a simple example. In the update loop, you typically have many tests and trigger various game actions. This is where you update score and health points, check for collisions, make enemies calculate their next move, roll the dice whether a trap has been set off, play random ambient sounds, and much more.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>simpleUpdate()</code> method starts running after the <code>simpleInitApp()</code> method has initialized the scene graph and state variables.</p>
+</li>
+<li>
+<p>JME3 executes everything in the <code>simpleUpdate()</code> method repeatedly, as fast as possible.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Use the loop to poll the game state and then initiate actions.</p>
+</li>
+<li>
+<p>Use the loop to trigger reactions and update the game state.</p>
+</li>
+<li>
+<p>Use the loop wisely, because having too many calls in the loop also slows down the game.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_init_update_render"><a class="anchor" href="#_init_update_render"></a>Init - Update - Render</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Note the the three phases of every game:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Init:</strong> The <code>simpleInitApp()</code> method is executed only <em>once</em>, right at the beginning;</p>
+</li>
+<li>
+<p><strong>Update:</strong> The <code>simpleUpdate()</code> method runs <em>repeatedly</em>, during the game.</p>
+</li>
+<li>
+<p><strong>Render:</strong> After every update, the jMonkeyEngine <em>automatically</em> redraws (<code>renders</code>) the screen for you.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Since rendering is automatic, initialization and updating are the two most important concepts in a SimpleApplication-based game for you:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>simpleInitApp()</code> method is the application&#8217;s &#8220;first breath&#8221;.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Here you load and create game data (once).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>simpleUpdate()</code> method is the application&#8217;s &#8220;heartbeat&#8221; (the time unit is called <code>ticks</code>).<br>
+Here you change their properties to update the game state (repeatedly).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Everything in a game happens either during initialization, or during the update loop. This means that these two methods grow very long over time. Follwo these two strategies to spread out init and update code over several modular Java classes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Move code blocks from the simpleInitApp() method to <a href="../advanced/application_states.html" class="page">AppStates</a>.</p>
+</li>
+<li>
+<p>Move code blocks from the simpleUpdate() method to <a href="../advanced/custom_controls.html" class="page">Custom Controls</a>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Keep this in mind for later when your application grows.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exercises"><a class="anchor" href="#_exercises"></a>Exercises</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here are some fun things to try:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>What happens if you give the rotate() method negative numbers?</p>
+</li>
+<li>
+<p>Can you create two Geometries next to each other, and make one rotate twice as fast as the other? (use the <code>tpf</code> variable)</p>
+</li>
+<li>
+<p>Can you make a cube that pulsates? (grows and shrinks)</p>
+</li>
+<li>
+<p>Can you make a cube that changes color? (change and set the Material)</p>
+</li>
+<li>
+<p>Can you make a rolling cube? (rotate around the x axis, and translate along the z axis)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Look back at the <a href="hello_node.html" class="page">Hello Node</a> tutorial if you do not remember the transformation methods for scaling, translating, and rotating.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Link to user-proposed solutions: <a href="solutions.html" class="page">Some proposed solutions</a><br>
+<u>Be sure to try to solve them for yourself first!</u></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion"><a class="anchor" href="#_conclusion"></a>Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now you are listening to the update loop, the &#8220;heartbeat&#8221; of the game, and you can add all kinds of action to it.</p>
+</div>
+<div class="paragraph">
+<p>The next thing the game needs is some <em>inter</em>action! Continue learning how to <a href="hello_input_system.html" class="page">respond to user input</a>.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p>See also:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Advanced jME3 developers use <a href="../advanced/application_states.html" class="page">Application States</a> and <a href="../advanced/custom_controls.html" class="page">Custom Controls</a> to implement game mechanics in their update loops. You will come across these topics again later when you proceed to more advanced documentation.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>combobox :: jMonkeyEngine Documentation</title>
+    <link rel="canonical" href="https://8keep.github.io/wikidemo-antora/jme3/1/jme3/contributions/tonegodgui/combobox.html">
+    <meta name="generator" content="Antora 2.3.0">
+    <link rel="stylesheet" href="../../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://8keep.github.io/wikidemo-antora">jMonkeyEngine Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="jme3" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../../documentation.html">Test</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../documentation.html">jMonkeyEngine 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Test</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Test</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../../documentation.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../documentation.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../documentation.html">Test</a></li>
+    <li><a href="combobox.html">combobox</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/davisro/dev/wikidemo-antora/docs/modules/ROOT/pages/jme3/contributions/tonegodgui/combobox.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">combobox</h1>
+<div class="sect1">
+<h2 id="_selectbox_combobox"><a class="anchor" href="#_selectbox_combobox"></a>SelectBox &amp; ComboBox</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The combo box and select box works exactly like any other combo box or select box:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>They both provides the standard 3 constructors</p>
+</li>
+<li>
+<p>The only difference between the two is the SelectBox’s text field is disabled.</p>
+</li>
+<li>
+<p>The SelectBox still allows for arrow key navigation and enter select, though other key input is disabled.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_usage_is_as_follows"><a class="anchor" href="#_usage_is_as_follows"></a>Usage is as follows:</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">ComboBox combo = new ComboBox(
+    screen,
+    “SomeID”,
+    new Vector2f(5,5)
+);
+combo.addListItem(“Some caption”, “Some value”);
+combo.addListItem(“Some caption”, “Some value”);
+combo.addListItem(“Some caption”, “Some value”);
+combo.addListItem(“Some caption”, “Some value”);
+combo.addListItem(“Some caption”, “Some value”);
+combo.addListItem(“Some caption”, “Some value”);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_abstract_event_methods"><a class="anchor" href="#_abstract_event_methods"></a>Abstract Event Methods:</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public void onChange(int selectedIndex, String value);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_hooks"><a class="anchor" href="#_hooks"></a>Hooks:</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Overridable hook for keyboard input events
+public void controlKeyPressHook(KeyInputEvent evt, String text) {  }</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_set_selected_index_via_code"><a class="anchor" href="#_set_selected_index_via_code"></a>Set Selected Index via Code</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">combo.setSelectedIndex(int index);
+combo.getSelectedIndex();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_methods_specific_to_combo_select_boxes"><a class="anchor" href="#_methods_specific_to_combo_select_boxes"></a>Methods specific to Combo &amp; Select Boxes:</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Add a list item
+combo.addListItem(String caption, String value);
+// Insert a list item
+combo.insertListItem(int index, String caption, Object value);
+// Remove a list item
+combo.removeListItem(int index);
+combo.removeListItem(String caption);
+combo.removeListIten(Object value);
+
+// Sorting methods
+combo.sortList(); // Sorts drop-down list standard alpha-numeric
+combo.sortListNumeric(); // Sorts drop-down list true numeric
+
+// Drop-down list validation
+combo.validateListSize(); //returns false if null or size 0, else returns true;
+
+// Force drop-down list to hide
+combo.hideDropDownList();
+
+// Retrieve List Items
+combo.getSelectedListItem();
+combo.getListItemByIndex(int index);</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../../_/js/site.js"></script>
+<script async src="../../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

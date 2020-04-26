@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Picking :: jMonkeyEngine Documentation</title>
+    <link rel="canonical" href="https://8keep.github.io/wikidemo-antora/jme3/1/jme3/contributions/cubes/tools/picking.html">
+    <meta name="generator" content="Antora 2.3.0">
+    <link rel="stylesheet" href="../../../../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://8keep.github.io/wikidemo-antora">jMonkeyEngine Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="jme3" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../../../documentation.html">Test</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../../../documentation.html">jMonkeyEngine 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Test</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Test</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../../../documentation.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../../documentation.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../../documentation.html">Test</a></li>
+    <li><a href="picking.html">Picking</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/davisro/dev/wikidemo-antora/docs/modules/ROOT/pages/jme3/contributions/cubes/tools/picking.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Picking</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>You already found out how to create a world block and modify it from your code. But wouldn&#8217;t it be nice to have a “click-and-build functionality? (Minecraft says hello)</p>
+</div>
+<div class="paragraph">
+<p>The framework helps you to get the block location which is e.g. pointed by your mouse - When receiving the coordinates, you can use them to add or remove a block there.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_blocknavigator"><a class="anchor" href="#_blocknavigator"></a>BlockNavigator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>BlockNavigator</code> class contains various methods to help you navigate through your blockworld without having to trouble with coordinates, type casts or chunks. The method we need for (mouse) picking is this one:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public static Vector3Int getPointedBlockLocation(BlockTerrain blockTerrain, Vector3f collisionContactPoint, boolean getNeighborLocation){
+    //Some mysterious code that returns the location
+    //of the block in the terrain, which is placed
+    //at the specified collisionContactPoint (world coordinates)
+    //If you set getNeighborLocation to true, you can
+    //get the empty block gap, in the direction towards you
+    //(e.g. if you want to add a block to the block you've clicked)
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_get_the_cursor_pointed_location_raycasting"><a class="anchor" href="#_get_the_cursor_pointed_location_raycasting"></a>Get the cursor-pointed location / RayCasting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So, the above method needs a collisionContactPoint - This is the point you&#8217;ve clicked in your world. Luckily, jMonkeyEngine offers raycasting, which lets you get exactly this point.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>I recommend to read the <a href="../../../beginner/hello_picking.html" class="page">Hello Picking</a> tutorial first, since the rest of this chapter has nothing to do with the “Cubes framework itself.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This is a method I&#8217;ve created while creating a test case for mouse picking in the blockworld - It returns the CollisionResults of the mouse cursor and a specified node: (Generally, this will be the BlockTerrain&#8217;s node)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private CollisionResults getRayCastingResults(Node node){
+    Vector3f origin = cam.getWorldCoordinates(new Vector2f((settings.getWidth() / 2), (settings.getHeight() / 2)), 0.0f);
+    Vector3f direction = cam.getWorldCoordinates(new Vector2f((settings.getWidth() / 2), (settings.getHeight() / 2)), 0.3f);
+    direction.subtractLocal(origin).normalizeLocal();
+    Ray ray = new Ray(origin, direction);
+    CollisionResults results = new CollisionResults();
+    node.collideWith(ray, results);
+    return results;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can use the closest CollisionResult to receive the collisionContactPoint with your BlockTerrain and to finally get the “pointed block location:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">private Vector3Int getCurrentPointedBlockLocation(boolean getNeighborLocation){
+    CollisionResults results = getRayCastingResults(terrainNode);
+    if(results.size() &gt; 0){
+        Vector3f collisionContactPoint = results.getClosestCollision().getContactPoint();
+        return BlockNavigator.getPointedBlockLocation(blockTerrain, collisionContactPoint, getNeighborLocation);
+    }
+    return null;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Time to sum up: You can now get the current block location that you point with your mouse at any time you want. :)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_woah_lets_build_minecraft"><a class="anchor" href="#_woah_lets_build_minecraft"></a>Woah - Let&#8217;s build Minecraft!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One nice example would be to register a mouse-listener (See <a href="../../../beginner/hello_input_system.html" class="page">Hello Input</a>) and to execute the following code when the user clicks:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">//Get the free block gap, to which the user is loooking...
+Vector3Int blockLocation = getCurrentPointedBlockLocation(true);
+//(The block location is null, if the user looks in the sky or out of the map)
+if(blockLocation != null){
+    //... and place a block there :)
+    blockTerrain.setBlock(blockLocation, CubesTestAssets.BLOCK_WOOD);
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And that&#8217;s it - You just created your own minecraft-like blockworld-editor. Give yourself a challenge and implement the other mouse button to remove the pointed block (Look out for the <code>getNeighborLocation</code> parameter).</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="http://destroflyer.mania-community.de/other/imagehost/cubes/test_picking.png" alt="test_picking.png" width="800" height=""></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_further_improvements"><a class="anchor" href="#_further_improvements"></a>Further improvements</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Create different types of interactions between player and block (Open a door, turn a switch, destroy a block, …) and a way to define own interactions</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../../../_/js/site.js"></script>
+<script async src="../../../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

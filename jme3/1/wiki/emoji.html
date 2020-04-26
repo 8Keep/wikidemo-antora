@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Emoji and Icons :: jMonkeyEngine Documentation</title>
+    <link rel="canonical" href="https://8keep.github.io/wikidemo-antora/jme3/1/wiki/emoji.html">
+    <meta name="generator" content="Antora 2.3.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://8keep.github.io/wikidemo-antora">jMonkeyEngine Documentation</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="jme3" data-version="1">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../documentation.html">Test</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../documentation.html">jMonkeyEngine 3</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Test</span>
+    <span class="version">1</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">Test</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../documentation.html">1</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../documentation.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../documentation.html">Test</a></li>
+    <li><a href="emoji.html">Emoji and Icons</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///home/davisro/dev/wikidemo-antora/docs/modules/ROOT/pages/wiki/emoji.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Emoji and Icons</h1>
+<div class="sect1">
+<h2 id="_how_to_use_icons_in_the_wiki"><a class="anchor" href="#_how_to_use_icons_in_the_wiki"></a>How to use icons in the wiki</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use any font awesome icon listed at <a href="https://fontawesome.com/v4.7.0/icons/">https://fontawesome.com/v4.7.0/icons/</a> in your wiki documents by use of the icon macro.</p>
+</div>
+<div class="listingblock">
+<div class="title">Syntax for inserting icons</div>
+<div class="content">
+<pre class="highlightjs highlight"><code>icon:thumbs-up []
+icon:database[role=green] // change color by use of the role syntax
+icon:heart[2x] // icons can be sized
+icon:shield[rotate=90, flip=vertical] // rotate and flip</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When setting the icons name, you do not have to preface it with <code>fa-</code>, asciidoctor will accept the font name.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The icon macro has three attributes you can set, they are size, rotate, and flip.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>size<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>The first positional attribute found, scales the icon; values are: <code>1x</code> (default), <code>2x</code>, <code>3x</code>, <code>4x</code>, <code>5x</code>, <code>lg</code>, <code>fw</code></p>
+</li>
+<li>
+<p>You can fix the width of the icon by use of the <code>fw</code> attribute. This helps when trying to align with other elements by giving the icon a fixed width.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>rotate</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Rotates the icon; values are: <code>90</code>, <code>180</code>, <code>270</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>flip</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Flips the icon; values are: <code>horizontal</code>, <code>vertical</code></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The first unnamed attribute is assumed to be the size. For instance, to make the icon twice the size as the default, simply add 2x inside the square brackets.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>icon:heart[2x]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Results:</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-heart"></i></span> 2x <span class="icon"><i class="fa fa-heart fa-2x"></i></span></p>
+</div>
+<div class="paragraph">
+<p>To rotate and flip the icon:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>icon:shield[rotate=270, flip=vertical]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Results:</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-shield"></i></span> rotated 90, and flipped vertical <span class="icon"><i class="fa fa-shield fa-rotate-90 fa-flip-vertical"></i></span></p>
+</div>
+<div class="paragraph">
+<p>You can also link to icons.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>icon:download[link="https://rubygems.org/downloads/asciidoctor-1.5.2.gem"]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Results:</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><a class="image" href="https://rubygems.org/downloads/asciidoctor-1.5.2.gem"><i class="fa fa-download"></i></a></span></p>
+</div>
+<div class="paragraph">
+<p>Lastly, you can color your icons using the role syntax.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>icon:database[role=green]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Results:</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-database"></i></span> colored green <span class="icon green"><i class="fa fa-database"></i></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_how_to_use_emoji_in_the_wiki"><a class="anchor" href="#_how_to_use_emoji_in_the_wiki"></a>How to use emoji in the wiki</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using emoji in wiki docs currently requires the setting of the <code>:stylesheet:</code> attribute in the header of the wiki document.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>:stylesheet: twemoji-awesome.css</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The <a href="wiki_header.html" class="page">Anatomy of a Wiki Header</a> document explains setting of this and other header attributes.</p>
+</div>
+<div class="paragraph">
+<p>Once the header attribute is set, you can add the emoji using the following syntax.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code>emoji:heart[2x] // the "[2x]" is a size modifier
+emoji:rage[]</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can change the icon size with the size modifier <code>[2x]</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>emoji:heart[]</code> emoji:heart[] <code>emoji:heart[2x]</code> emoji:heart[2x]</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_emoji_and_name_cheet_sheet"><a class="anchor" href="#_emoji_and_name_cheet_sheet"></a>Emoji and Name Cheet Sheet</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_people"><a class="anchor" href="#_people"></a>People</h3>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:smile[2x] <code class="small">smile</code><br>
+emoji:smiley[2x] <code class="small">smiley</code><br>
+emoji:heart-eyes[2x] <code class="small">heart-eyes</code><br>
+emoji:flushed[2x] <code class="small">flushed</code><br>
+emoji:grin[2x] <code class="small">grin</code><br>
+emoji:stuck-out-tongue-closed-eyes[2x] <code class="small">stuck-out-tongue-closed-eyes</code><br>
+emoji:kissing-smiling-eyes[2x] <code class="small">kissing-smiling-eyes</code><br>
+emoji:worried[2x] <code class="small">worried</code><br>
+emoji:open-mouth[2x] <code class="small">open-mouth</code><br>
+emoji:hushed[2x] <code class="small">hushed</code><br>
+emoji:sweat-smile[2x] <code class="small">sweat-smile</code><br>
+emoji:pensive[2x] <code class="small">pensive</code><br>
+emoji:fearful[2x] <code class="small">fearful</code><br>
+emoji:cry[2x] <code class="small">cry</code><br>
+emoji:astonished[2x] <code class="small">astonished</code><br>
+emoji:angry[2x] <code class="small">angry</code><br>
+emoji:sleepy[2x] <code class="small">sleepy</code><br>
+emoji:sunglasses[2x] <code class="small">sunglasses</code><br>
+emoji:smiling-imp[2x] <code class="small">smiling-imp</code><br>
+emoji:innocent[2x] <code class="small">innocent</code><br>
+emoji:blue-heart[2x] <code class="small">blue-heart</code><br>
+emoji:green-heart[2x] <code class="small">green-heart</code><br>
+emoji:heartpulse[2x] <code class="small">heartpulse</code><br>
+emoji:cupid[2x] <code class="small">cupid</code><br>
+emoji:star[2x] <code class="small">star</code><br>
+emoji:boom[2x] <code class="small">boom</code><br>
+emoji:question[2x] <code class="small">question</code><br>
+emoji:zzz[2x] <code class="small">zzz</code><br>
+emoji:notes[2x] <code class="small">notes</code><br>
+emoji:poop[2x] <code class="small">poop</code><br>
+emoji:ok-hand[2x] <code class="small">ok-hand</code><br>
+emoji:v[2x] <code class="small">v</code><br>
+emoji:open-hands[2x] <code class="small">open-hands</code><br>
+emoji:point-left[2x] <code class="small">point-left</code><br>
+emoji:pray[2x] <code class="small">pray</code><br>
+emoji:muscle[2x] <code class="small">muscle</code><br>
+emoji:couple[2x] <code class="small">couple</code><br>
+emoji:dancers[2x] <code class="small">dancers</code><br>
+emoji:information-desk-person[2x] <code class="small">information-desk-person</code><br>
+emoji:person-with-pouting-face[2x] <code class="small">person-with-pouting-face</code><br>
+emoji:couplekiss[2x] <code class="small">couplekiss</code><br>
+emoji:haircut[2x] <code class="small">haircut</code><br>
+emoji:girl[2x] <code class="small">girl</code><br>
+emoji:baby[2x] <code class="small">baby</code><br>
+emoji:person-with-blond-hair[2x] <code class="small">person-with-blond-hair</code><br>
+emoji:construction-worker[2x] <code class="small">construction-worker</code><br>
+emoji:princess[2x] <code class="small">princess</code><br>
+emoji:heart-eyes-cat[2x] <code class="small">heart-eyes-cat</code><br>
+emoji:scream-cat[2x] <code class="small">scream-cat</code><br>
+emoji:pouting-cat[2x] <code class="small">pouting-cat</code><br>
+emoji:see-no-evil[2x] <code class="small">see-no-evil</code><br>
+emoji:guardsman[2x] <code class="small">guardsman</code><br>
+emoji:lips[2x] <code class="small">lips</code><br>
+emoji:ear[2x] <code class="small">ear</code><br>
+emoji:tongue[2x] <code class="small">tongue</code><br>
+emoji:busts-in-silhouette[2x] <code class="small">busts-in-silhouette</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:laughing[2x] <code class="small">laughing</code><br>
+emoji:relaxed[2x] <code class="small">relaxed</code><br>
+emoji:kissing-heart[2x] <code class="small">kissing-heart</code><br>
+emoji:relieved[2x] <code class="small">relieved</code><br>
+emoji:wink[2x] <code class="small">wink</code><br>
+emoji:grinning[2x] <code class="small">grinning</code><br>
+emoji:stuck-out-tongue[2x] <code class="small">stuck-out-tongue</code><br>
+emoji:frowning[2x] <code class="small">frowning</code><br>
+emoji:grimacing[2x] <code class="small">grimacing</code><br>
+emoji:expressionless[2x] <code class="small">expressionless</code><br>
+emoji:sweat[2x] <code class="small">sweat</code><br>
+emoji:disappointed[2x] <code class="small">disappointed</code><br>
+emoji:cold-sweat[2x] <code class="small">cold-sweat</code><br>
+emoji:sob[2x] <code class="small">sob</code><br>
+emoji:scream[2x] <code class="small">scream</code><br>
+emoji:rage[2x] <code class="small">rage</code><br>
+emoji:yum[2x] <code class="small">yum</code><br>
+emoji:dizzy-face[2x] <code class="small">dizzy-face</code><br>
+emoji:neutral-face[2x] <code class="small">neutral-face</code><br>
+emoji:alien[2x] <code class="small">alien</code><br>
+emoji:purple-heart[2x] <code class="small">purple-heart</code><br>
+emoji:broken-heart[2x] <code class="small">broken-heart</code><br>
+emoji:two-hearts[2x] <code class="small">two-hearts</code><br>
+emoji:sparkling-heart[2x] <code class="small">sparkling-heart</code><br>
+emoji:star2[2x] <code class="small">star2</code><br>
+emoji:anger[2x] <code class="small">anger</code><br>
+emoji:grey-exclamation[2x] <code class="small">grey-exclamation</code><br>
+emoji:dash[2x] <code class="small">dash</code><br>
+emoji:musical-note[2x] <code class="small">musical-note</code><br>
+emoji:thumbsup[2x] <code class="small">thumbsup</code><br>
+emoji:punch[2x] <code class="small">punch</code><br>
+emoji:wave[2x] <code class="small">wave</code><br>
+emoji:point-up[2x] <code class="small">point-up</code><br>
+emoji:point-right[2x] <code class="small">point-right</code><br>
+emoji:point-up-2[2x] <code class="small">point-up-2</code><br>
+emoji:walking[2x] <code class="small">walking</code><br>
+emoji:family[2x] <code class="small">family</code><br>
+emoji:ok-woman[2x] <code class="small">ok-woman</code><br>
+emoji:raised-hand[2x] <code class="small">raised-hand</code><br>
+emoji:person-frowning[2x] <code class="small">person-frowning</code><br>
+emoji:couple-with-heart[2x] <code class="small">couple-with-heart</code><br>
+emoji:nail-care[2x] <code class="small">nail-care</code><br>
+emoji:woman[2x] <code class="small">woman</code><br>
+emoji:older-woman[2x] <code class="small">older-woman</code><br>
+emoji:man-with-gua-pi-mao[2x] <code class="small">man-with-gua-pi-mao</code><br>
+emoji:cop[2x] <code class="small">cop</code><br>
+emoji:smiley-cat[2x] <code class="small">smiley-cat</code><br>
+emoji:kissing-cat[2x] <code class="small">kissing-cat</code><br>
+emoji:crying-cat-face[2x] <code class="small">crying-cat-face</code><br>
+emoji:japanese-ogre[2x] <code class="small">japanese-ogre</code><br>
+emoji:hear-no-evil[2x] <code class="small">hear-no-evil</code><br>
+emoji:skull[2x] <code class="small">skull</code><br>
+emoji:kiss[2x] <code class="small">kiss</code><br>
+emoji:eyes[2x] <code class="small">eyes</code><br>
+emoji:love-letter[2x] <code class="small">love-letter</code><br>
+emoji:speech-balloon[2x] <code class="small">speech-balloon</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:blush[2x] <code class="small">blush</code><br>
+emoji:smirk[2x] <code class="small">smirk</code><br>
+emoji:kissing-closed-eyes[2x] <code class="small">kissing-closed-eyes</code><br>
+emoji:satisfied[2x] <code class="small">satisfied</code><br>
+emoji:stuck-out-tongue-winking-eye[2x] <code class="small">stuck-out-tongue-winking-eye</code><br>
+emoji:kissing[2x] <code class="small">kissing</code><br>
+emoji:sleeping[2x] <code class="small">sleeping</code><br>
+emoji:anguished[2x] <code class="small">anguished</code><br>
+emoji:confused[2x] <code class="small">confused</code><br>
+emoji:unamused[2x] <code class="small">unamused</code><br>
+emoji:weary[2x] <code class="small">weary</code><br>
+emoji:confounded[2x] <code class="small">confounded</code><br>
+emoji:persevere[2x] <code class="small">persevere</code><br>
+emoji:joy[2x] <code class="small">joy</code><br>
+emoji:tired-face[2x] <code class="small">tired-face</code><br>
+emoji:triumph[2x] <code class="small">triumph</code><br>
+emoji:mask[2x] <code class="small">mask</code><br>
+emoji:imp[2x] <code class="small">imp</code><br>
+emoji:no-mouth[2x] <code class="small">no-mouth</code><br>
+emoji:yellow-heart[2x] <code class="small">yellow-heart</code><br>
+emoji:heart[2x] <code class="small">heart</code><br>
+emoji:heartbeat[2x] <code class="small">heartbeat</code><br>
+emoji:revolving-hearts[2x] <code class="small">revolving-hearts</code><br>
+emoji:sparkles[2x] <code class="small">sparkles</code><br>
+emoji:dizzy[2x] <code class="small">dizzy</code><br>
+emoji:exclamation[2x] <code class="small">exclamation</code><br>
+emoji:grey-question[2x] <code class="small">grey-question</code><br>
+emoji:sweat-drops[2x] <code class="small">sweat-drops</code><br>
+emoji:fire[2x] <code class="small">fire</code><br>
+emoji:thumbsdown[2x] <code class="small">thumbsdown</code><br>
+emoji:fist[2x] <code class="small">fist</code><br>
+emoji:hand[2x] <code class="small">hand</code><br>
+emoji:point-down[2x] <code class="small">point-down</code><br>
+emoji:raised-hands[2x] <code class="small">raised-hands</code><br>
+emoji:clap[2x] <code class="small">clap</code><br>
+emoji:runner[2x] <code class="small">runner</code><br>
+emoji:dancer[2x] <code class="small">dancer</code><br>
+emoji:no-good[2x] <code class="small">no-good</code><br>
+emoji:bride-with-veil[2x] <code class="small">bride-with-veil</code><br>
+emoji:bow[2x] <code class="small">bow</code><br>
+emoji:massage[2x] <code class="small">massage</code><br>
+emoji:boy[2x] <code class="small">boy</code><br>
+emoji:man[2x] <code class="small">man</code><br>
+emoji:older-man[2x] <code class="small">older-man</code><br>
+emoji:man-with-turban[2x] <code class="small">man-with-turban</code><br>
+emoji:angel[2x] <code class="small">angel</code><br>
+emoji:smile-cat[2x] <code class="small">smile-cat</code><br>
+emoji:smirk-cat[2x] <code class="small">smirk-cat</code><br>
+emoji:joy-cat[2x] <code class="small">joy-cat</code><br>
+emoji:japanese-goblin[2x] <code class="small">japanese-goblin</code><br>
+emoji:speak-no-evil[2x] <code class="small">speak-no-evil</code><br>
+emoji:feet[2x] <code class="small">feet</code><br>
+emoji:droplet[2x] <code class="small">droplet</code><br>
+emoji:nose[2x] <code class="small">nose</code><br>
+emoji:bust-in-silhouette[2x] <code class="small">bust-in-silhouette</code><br>
+emoji:thought-balloon[2x] <code class="small">thought-balloon</code><br></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_nature"><a class="anchor" href="#_nature"></a>Nature</h3>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:sunny[2x] <code class="small">sunny</code><br>
+emoji:snowflake[2x] <code class="small">snowflake</code><br>
+emoji:cyclone[2x] <code class="small">cyclone</code><br>
+emoji:cat[2x] <code class="small">cat</code><br>
+emoji:hamster[2x] <code class="small">hamster</code><br>
+emoji:frog[2x] <code class="small">frog</code><br>
+emoji:bear[2x] <code class="small">bear</code><br>
+emoji:cow[2x] <code class="small">cow</code><br>
+emoji:monkey[2x] <code class="small">monkey</code><br>
+emoji:camel[2x] <code class="small">camel</code><br>
+emoji:panda-face[2x] <code class="small">panda-face</code><br>
+emoji:baby-chick[2x] <code class="small">baby-chick</code><br>
+emoji:chicken[2x] <code class="small">chicken</code><br>
+emoji:bug[2x] <code class="small">bug</code><br>
+emoji:beetle[2x] <code class="small">beetle</code><br>
+emoji:tropical-fish[2x] <code class="small">tropical-fish</code><br>
+emoji:whale2[2x] <code class="small">whale2</code><br>
+emoji:ram[2x] <code class="small">ram</code><br>
+emoji:tiger2[2x] <code class="small">tiger2</code><br>
+emoji:goat[2x] <code class="small">goat</code><br>
+emoji:pig2[2x] <code class="small">pig2</code><br>
+emoji:dragon-face[2x] <code class="small">dragon-face</code><br>
+emoji:dromedary-camel[2x] <code class="small">dromedary-camel</code><br>
+emoji:poodle[2x] <code class="small">poodle</code><br>
+emoji:cherry-blossom[2x] <code class="small">cherry-blossom</code><br>
+emoji:rose[2x] <code class="small">rose</code><br>
+emoji:maple-leaf[2x] <code class="small">maple-leaf</code><br>
+emoji:herb[2x] <code class="small">herb</code><br>
+emoji:palm-tree[2x] <code class="small">palm-tree</code><br>
+emoji:chestnut[2x] <code class="small">chestnut</code><br>
+emoji:ear-of-rice[2x] <code class="small">ear-of-rice</code><br>
+emoji:sun-with-face[2x] <code class="small">sun-with-face</code><br>
+emoji:new-moon[2x] <code class="small">new-moon</code><br>
+emoji:waxing-gibbous-moon[2x] <code class="small">waxing-gibbous-moon</code><br>
+emoji:last-quarter-moon[2x] <code class="small">last-quarter-moon</code><br>
+emoji:first-quarter-moon-with-face[2x] <code class="small">first-quarter-moon-with-face</code><br>
+emoji:earth-americas[2x] <code class="small">earth-americas</code><br>
+emoji:milky-way[2x] <code class="small">milky-way</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:umbrella[2x] <code class="small">umbrella</code><br>
+emoji:snowman[2x] <code class="small">snowman</code><br>
+emoji:foggy[2x] <code class="small">foggy</code><br>
+emoji:dog[2x] <code class="small">dog</code><br>
+emoji:rabbit[2x] <code class="small">rabbit</code><br>
+emoji:tiger[2x] <code class="small">tiger</code><br>
+emoji:pig[2x] <code class="small">pig</code><br>
+emoji:boar[2x] <code class="small">boar</code><br>
+emoji:horse[2x] <code class="small">horse</code><br>
+emoji:sheep[2x] <code class="small">sheep</code><br>
+emoji:snake[2x] <code class="small">snake</code><br>
+emoji:hatched-chick[2x] <code class="small">hatched-chick</code><br>
+emoji:penguin[2x] <code class="small">penguin</code><br>
+emoji:honeybee[2x] <code class="small">honeybee</code><br>
+emoji:snail[2x] <code class="small">snail</code><br>
+emoji:fish[2x] <code class="small">fish</code><br>
+emoji:dolphin[2x] <code class="small">dolphin</code><br>
+emoji:rat[2x] <code class="small">rat</code><br>
+emoji:rabbit2[2x] <code class="small">rabbit2</code><br>
+emoji:rooster[2x] <code class="small">rooster</code><br>
+emoji:mouse2[2x] <code class="small">mouse2</code><br>
+emoji:blowfish[2x] <code class="small">blowfish</code><br>
+emoji:leopard[2x] <code class="small">leopard</code><br>
+emoji:paw-prints[2x] <code class="small">paw-prints</code><br>
+emoji:tulip[2x] <code class="small">tulip</code><br>
+emoji:sunflower[2x] <code class="small">sunflower</code><br>
+emoji:leaves[2x] <code class="small">leaves</code><br>
+emoji:mushroom[2x] <code class="small">mushroom</code><br>
+emoji:evergreen-tree[2x] <code class="small">evergreen-tree</code><br>
+emoji:seedling[2x] <code class="small">seedling</code><br>
+emoji:shell[2x] <code class="small">shell</code><br>
+emoji:full-moon-with-face[2x] <code class="small">full-moon-with-face</code><br>
+emoji:waxing-crescent-moon[2x] <code class="small">waxing-crescent-moon</code><br>
+emoji:full-moon[2x] <code class="small">full-moon</code><br>
+emoji:waning-crescent-moon[2x] <code class="small">waning-crescent-moon</code><br>
+emoji:moon[2x] <code class="small">moon</code><br>
+emoji:earth-asia[2x] <code class="small">earth-asia</code><br>
+emoji:partly-sunny[2x] <code class="small">partly-sunny</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:cloud[2x] <code class="small">cloud</code><br>
+emoji:zap[2x] <code class="small">zap</code><br>
+emoji:ocean[2x] <code class="small">ocean</code><br>
+emoji:mouse[2x] <code class="small">mouse</code><br>
+emoji:wolf[2x] <code class="small">wolf</code><br>
+emoji:koala[2x] <code class="small">koala</code><br>
+emoji:pig-nose[2x] <code class="small">pig-nose</code><br>
+emoji:monkey-face[2x] <code class="small">monkey-face</code><br>
+emoji:racehorse[2x] <code class="small">racehorse</code><br>
+emoji:elephant[2x] <code class="small">elephant</code><br>
+emoji:bird[2x] <code class="small">bird</code><br>
+emoji:hatching-chick[2x] <code class="small">hatching-chick</code><br>
+emoji:turtle[2x] <code class="small">turtle</code><br>
+emoji:ant[2x] <code class="small">ant</code><br>
+emoji:octopus[2x] <code class="small">octopus</code><br>
+emoji:whale[2x] <code class="small">whale</code><br>
+emoji:cow2[2x] <code class="small">cow2</code><br>
+emoji:water-buffalo[2x] <code class="small">water-buffalo</code><br>
+emoji:dragon[2x] <code class="small">dragon</code><br>
+emoji:dog2[2x] <code class="small">dog2</code><br>
+emoji:ox[2x] <code class="small">ox</code><br>
+emoji:crocodile[2x] <code class="small">crocodile</code><br>
+emoji:cat2[2x] <code class="small">cat2</code><br>
+emoji:bouquet[2x] <code class="small">bouquet</code><br>
+emoji:four-leaf-clover[2x] <code class="small">four-leaf-clover</code><br>
+emoji:hibiscus[2x] <code class="small">hibiscus</code><br>
+emoji:fallen-leaf[2x] <code class="small">fallen-leaf</code><br>
+emoji:cactus[2x] <code class="small">cactus</code><br>
+emoji:deciduous-tree[2x] <code class="small">deciduous-tree</code><br>
+emoji:blossom[2x] <code class="small">blossom</code><br>
+emoji:globe-with-meridians[2x] <code class="small">globe-with-meridians</code><br>
+emoji:new-moon-with-face[2x] <code class="small">new-moon-with-face</code><br>
+emoji:first-quarter-moon[2x] <code class="small">first-quarter-moon</code><br>
+emoji:waning-gibbous-moon[2x] <code class="small">waning-gibbous-moon</code><br>
+emoji:last-quarter-moon-with-face[2x] <code class="small">last-quarter-moon-with-face</code><br>
+emoji:earth-africa[2x] <code class="small">earth-africa</code><br>
+emoji:volcano[2x] <code class="small">volcano</code><br></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_objects"><a class="anchor" href="#_objects"></a>Objects</h3>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:bamboo[2x] <code class="small">bamboo</code><br>
+emoji:school-satchel[2x] <code class="small">school-satchel</code><br>
+emoji:fireworks[2x] <code class="small">fireworks</code><br>
+emoji:rice-scene[2x] <code class="small">rice-scene</code><br>
+emoji:santa[2x] <code class="small">santa</code><br>
+emoji:apple[2x] <code class="small">apple</code><br>
+emoji:balloon[2x] <code class="small">balloon</code><br>
+emoji:baseball[2x] <code class="small">baseball</code><br>
+emoji:bathtub[2x] <code class="small">bathtub</code><br>
+emoji:beers[2x] <code class="small">beers</code><br>
+emoji:bicyclist[2x] <code class="small">bicyclist</code><br>
+emoji:black-joker[2x] <code class="small">black-joker</code><br>
+emoji:bomb[2x] <code class="small">bomb</code><br>
+emoji:books[2x] <code class="small">books</code><br>
+emoji:bread[2x] <code class="small">bread</code><br>
+emoji:cake[2x] <code class="small">cake</code><br>
+emoji:camera[2x] <code class="small">camera</code><br>
+emoji:cd[2x] <code class="small">cd</code><br>
+emoji:cherries[2x] <code class="small">cherries</code><br>
+emoji:clapper[2x] <code class="small">clapper</code><br>
+emoji:closed-lock-with-key[2x] <code class="small">closed-lock-with-key</code><br>
+emoji:cocktail[2x] <code class="small">cocktail</code><br>
+emoji:confetti-ball[2x] <code class="small">confetti-ball</code><br>
+emoji:credit-card[2x] <code class="small">credit-card</code><br>
+emoji:curry[2x] <code class="small">curry</code><br>
+emoji:dart[2x] <code class="small">dart</code><br>
+emoji:dollar[2x] <code class="small">dollar</code><br>
+emoji:dress[2x] <code class="small">dress</code><br>
+emoji:egg[2x] <code class="small">egg</code><br>
+emoji:email[2x] <code class="small">email</code><br>
+emoji:fax[2x] <code class="small">fax</code><br>
+emoji:fishing-pole-and-fish[2x] <code class="small">fishing-pole-and-fish</code><br>
+emoji:flower-playing-cards[2x] <code class="small">flower-playing-cards</code><br>
+emoji:fried-shrimp[2x] <code class="small">fried-shrimp</code><br>
+emoji:gem[2x] <code class="small">gem</code><br>
+emoji:grapes[2x] <code class="small">grapes</code><br>
+emoji:guitar[2x] <code class="small">guitar</code><br>
+emoji:hammer[2x] <code class="small">hammer</code><br>
+emoji:hearts[2x] <code class="small">hearts</code><br>
+emoji:hocho[2x] <code class="small">hocho</code><br>
+emoji:hourglass[2x] <code class="small">hourglass</code><br>
+emoji:icecream[2x] <code class="small">icecream</code><br>
+emoji:iphone[2x] <code class="small">iphone</code><br>
+emoji:kimono[2x] <code class="small">kimono</code><br>
+emoji:lipstick[2x] <code class="small">lipstick</code><br>
+emoji:lollipop[2x] <code class="small">lollipop</code><br>
+emoji:low-brightness[2x] <code class="small">low-brightness</code><br>
+emoji:mahjong[2x] <code class="small">mahjong</code><br>
+emoji:mailbox-with-mail[2x] <code class="small">mailbox-with-mail</code><br>
+emoji:meat-on-bone[2x] <code class="small">meat-on-bone</code><br>
+emoji:memo[2x] <code class="small">memo</code><br>
+emoji:minidisc[2x] <code class="small">minidisc</code><br>
+emoji:mountain-bicyclist[2x] <code class="small">mountain-bicyclist</code><br>
+emoji:musical-score[2x] <code class="small">musical-score</code><br>
+emoji:necktie[2x] <code class="small">necktie</code><br>
+emoji:notebook[2x] <code class="small">notebook</code><br>
+emoji:oden[2x] <code class="small">oden</code><br>
+emoji:outbox-tray[2x] <code class="small">outbox-tray</code><br>
+emoji:pager[2x] <code class="small">pager</code><br>
+emoji:pear[2x] <code class="small">pear</code><br>
+emoji:pill[2x] <code class="small">pill</code><br>
+emoji:postal-horn[2x] <code class="small">postal-horn</code><br>
+emoji:poultry-leg[2x] <code class="small">poultry-leg</code><br>
+emoji:pushpin[2x] <code class="small">pushpin</code><br>
+emoji:ribbon[2x] <code class="small">ribbon</code><br>
+emoji:rice-cracker[2x] <code class="small">rice-cracker</code><br>
+emoji:running-shirt-with-sash[2x] <code class="small">running-shirt-with-sash</code><br>
+emoji:satellite[2x] <code class="small">satellite</code><br>
+emoji:scroll[2x] <code class="small">scroll</code><br>
+emoji:shirt[2x] <code class="small">shirt</code><br>
+emoji:smoking[2x] <code class="small">smoking</code><br>
+emoji:sound[2x] <code class="small">sound</code><br>
+emoji:spaghetti[2x] <code class="small">spaghetti</code><br>
+emoji:straight-ruler[2x] <code class="small">straight-ruler</code><br>
+emoji:sushi[2x] <code class="small">sushi</code><br>
+emoji:syringe[2x] <code class="small">syringe</code><br>
+emoji:tangerine[2x] <code class="small">tangerine</code><br>
+emoji:telescope[2x] <code class="small">telescope</code><br>
+emoji:tomato[2x] <code class="small">tomato</code><br>
+emoji:trophy[2x] <code class="small">trophy</code><br>
+emoji:tv[2x] <code class="small">tv</code><br>
+emoji:video-camera[2x] <code class="small">video-camera</code><br>
+emoji:watch[2x] <code class="small">watch</code><br>
+emoji:womans-clothes[2x] <code class="small">womans-clothes</code><br>
+emoji:yen[2x] <code class="small">yen</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:gift-heart[2x] <code class="small">gift-heart</code><br>
+emoji:mortar-board[2x] <code class="small">mortar-board</code><br>
+emoji:sparkler[2x] <code class="small">sparkler</code><br>
+emoji:jack-o-lantern[2x] <code class="small">jack-o-lantern</code><br>
+emoji:8ball[2x] <code class="small">8ball</code><br>
+emoji:art[2x] <code class="small">art</code><br>
+emoji:banana[2x] <code class="small">banana</code><br>
+emoji:basketball[2x] <code class="small">basketball</code><br>
+emoji:battery[2x] <code class="small">battery</code><br>
+emoji:bell[2x] <code class="small">bell</code><br>
+emoji:bikini[2x] <code class="small">bikini</code><br>
+emoji:black-nib[2x] <code class="small">black-nib</code><br>
+emoji:bookmark[2x] <code class="small">bookmark</code><br>
+emoji:boot[2x] <code class="small">boot</code><br>
+emoji:briefcase[2x] <code class="small">briefcase</code><br>
+emoji:calendar[2x] <code class="small">calendar</code><br>
+emoji:candy[2x] <code class="small">candy</code><br>
+emoji:chart-with-downwards-trend[2x] <code class="small">chart-with-downwards-trend</code><br>
+emoji:chocolate-bar[2x] <code class="small">chocolate-bar</code><br>
+emoji:clipboard[2x] <code class="small">clipboard</code><br>
+emoji:closed-umbrella[2x] <code class="small">closed-umbrella</code><br>
+emoji:coffee[2x] <code class="small">coffee</code><br>
+emoji:cookie[2x] <code class="small">cookie</code><br>
+emoji:crown[2x] <code class="small">crown</code><br>
+emoji:custard[2x] <code class="small">custard</code><br>
+emoji:date[2x] <code class="small">date</code><br>
+emoji:door[2x] <code class="small">door</code><br>
+emoji:dvd[2x] <code class="small">dvd</code><br>
+emoji:eggplant[2x] <code class="small">eggplant</code><br>
+emoji:euro[2x] <code class="small">euro</code><br>
+emoji:file-folder[2x] <code class="small">file-folder</code><br>
+emoji:flashlight[2x] <code class="small">flashlight</code><br>
+emoji:football[2x] <code class="small">football</code><br>
+emoji:fries[2x] <code class="small">fries</code><br>
+emoji:gift[2x] <code class="small">gift</code><br>
+emoji:green-apple[2x] <code class="small">green-apple</code><br>
+emoji:gun[2x] <code class="small">gun</code><br>
+emoji:handbag[2x] <code class="small">handbag</code><br>
+emoji:high-brightness[2x] <code class="small">high-brightness</code><br>
+emoji:honey-pot[2x] <code class="small">honey-pot</code><br>
+emoji:hourglass-flowing-sand[2x] <code class="small">hourglass-flowing-sand</code><br>
+emoji:inbox-tray[2x] <code class="small">inbox-tray</code><br>
+emoji:jeans[2x] <code class="small">jeans</code><br>
+emoji:ledger[2x] <code class="small">ledger</code><br>
+emoji:lock[2x] <code class="small">lock</code><br>
+emoji:loop[2x] <code class="small">loop</code><br>
+emoji:mag[2x] <code class="small">mag</code><br>
+emoji:mailbox[2x] <code class="small">mailbox</code><br>
+emoji:mailbox-with-no-mail[2x] <code class="small">mailbox-with-no-mail</code><br>
+emoji:mega[2x] <code class="small">mega</code><br>
+emoji:microphone[2x] <code class="small">microphone</code><br>
+emoji:money-with-wings[2x] <code class="small">money-with-wings</code><br>
+emoji:movie-camera[2x] <code class="small">movie-camera</code><br>
+emoji:mute[2x] <code class="small">mute</code><br>
+emoji:newspaper[2x] <code class="small">newspaper</code><br>
+emoji:notebook-with-decorative-cover[2x] <code class="small">notebook-with-decorative-cover</code><br>
+emoji:open-file-folder[2x] <code class="small">open-file-folder</code><br>
+emoji:page-facing-up[2x] <code class="small">page-facing-up</code><br>
+emoji:paperclip[2x] <code class="small">paperclip</code><br>
+emoji:pencil2[2x] <code class="small">pencil2</code><br>
+emoji:pineapple[2x] <code class="small">pineapple</code><br>
+emoji:postbox[2x] <code class="small">postbox</code><br>
+emoji:pound[2x] <code class="small">pound</code><br>
+emoji:radio[2x] <code class="small">radio</code><br>
+emoji:rice[2x] <code class="small">rice</code><br>
+emoji:ring[2x] <code class="small">ring</code><br>
+emoji:sake[2x] <code class="small">sake</code><br>
+emoji:saxophone[2x] <code class="small">saxophone</code><br>
+emoji:seat[2x] <code class="small">seat</code><br>
+emoji:shower[2x] <code class="small">shower</code><br>
+emoji:snowboarder[2x] <code class="small">snowboarder</code><br>
+emoji:space-invader[2x] <code class="small">space-invader</code><br>
+emoji:speaker[2x] <code class="small">speaker</code><br>
+emoji:strawberry[2x] <code class="small">strawberry</code><br>
+emoji:sweet-potato[2x] <code class="small">sweet-potato</code><br>
+emoji:tada[2x] <code class="small">tada</code><br>
+emoji:tea[2x] <code class="small">tea</code><br>
+emoji:tennis[2x] <code class="small">tennis</code><br>
+emoji:tophat[2x] <code class="small">tophat</code><br>
+emoji:tropical-drink[2x] <code class="small">tropical-drink</code><br>
+emoji:unlock[2x] <code class="small">unlock</code><br>
+emoji:video-game[2x] <code class="small">video-game</code><br>
+emoji:watermelon[2x] <code class="small">watermelon</code><br>
+emoji:womans-hat[2x] <code class="small">womans-hat</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:dolls[2x] <code class="small">dolls</code><br>
+emoji:flags[2x] <code class="small">flags</code><br>
+emoji:wind-chime[2x] <code class="small">wind-chime</code><br>
+emoji:ghost[2x] <code class="small">ghost</code><br>
+emoji:alarm-clock[2x] <code class="small">alarm-clock</code><br>
+emoji:baby-bottle[2x] <code class="small">baby-bottle</code><br>
+emoji:bar-chart[2x] <code class="small">bar-chart</code><br>
+emoji:bath[2x] <code class="small">bath</code><br>
+emoji:beer[2x] <code class="small">beer</code><br>
+emoji:bento[2x] <code class="small">bento</code><br>
+emoji:birthday[2x] <code class="small">birthday</code><br>
+emoji:blue-book[2x] <code class="small">blue-book</code><br>
+emoji:bookmark-tabs[2x] <code class="small">bookmark-tabs</code><br>
+emoji:bowling[2x] <code class="small">bowling</code><br>
+emoji:bulb[2x] <code class="small">bulb</code><br>
+emoji:calling[2x] <code class="small">calling</code><br>
+emoji:card-index[2x] <code class="small">card-index</code><br>
+emoji:chart-with-upwards-trend[2x] <code class="small">chart-with-upwards-trend</code><br>
+emoji:christmas-tree[2x] <code class="small">christmas-tree</code><br>
+emoji:closed-book[2x] <code class="small">closed-book</code><br>
+emoji:clubs[2x] <code class="small">clubs</code><br>
+emoji:computer[2x] <code class="small">computer</code><br>
+emoji:corn[2x] <code class="small">corn</code><br>
+emoji:crystal-ball[2x] <code class="small">crystal-ball</code><br>
+emoji:dango[2x] <code class="small">dango</code><br>
+emoji:diamonds[2x] <code class="small">diamonds</code><br>
+emoji:doughnut[2x] <code class="small">doughnut</code><br>
+emoji:e-mail[2x] <code class="small">e-mail</code><br>
+emoji:electric-plug[2x] <code class="small">electric-plug</code><br>
+emoji:eyeglasses[2x] <code class="small">eyeglasses</code><br>
+emoji:fish-cake[2x] <code class="small">fish-cake</code><br>
+emoji:floppy-disk[2x] <code class="small">floppy-disk</code><br>
+emoji:fork-and-knife[2x] <code class="small">fork-and-knife</code><br>
+emoji:game-die[2x] <code class="small">game-die</code><br>
+emoji:golf[2x] <code class="small">golf</code><br>
+emoji:green-book[2x] <code class="small">green-book</code><br>
+emoji:hamburger[2x] <code class="small">hamburger</code><br>
+emoji:headphones[2x] <code class="small">headphones</code><br>
+emoji:high-heel[2x] <code class="small">high-heel</code><br>
+emoji:horse-racing[2x] <code class="small">horse-racing</code><br>
+emoji:ice-cream[2x] <code class="small">ice-cream</code><br>
+emoji:incoming-envelope[2x] <code class="small">incoming-envelope</code><br>
+emoji:key[2x] <code class="small">key</code><br>
+emoji:lemon[2x] <code class="small">lemon</code><br>
+emoji:lock-with-ink-pen[2x] <code class="small">lock-with-ink-pen</code><br>
+emoji:loudspeaker[2x] <code class="small">loudspeaker</code><br>
+emoji:mag-right[2x] <code class="small">mag-right</code><br>
+emoji:mailbox-closed[2x] <code class="small">mailbox-closed</code><br>
+emoji:mans-shoe[2x] <code class="small">mans-shoe</code><br>
+emoji:melon[2x] <code class="small">melon</code><br>
+emoji:microscope[2x] <code class="small">microscope</code><br>
+emoji:moneybag[2x] <code class="small">moneybag</code><br>
+emoji:musical-keyboard[2x] <code class="small">musical-keyboard</code><br>
+emoji:name-badge[2x] <code class="small">name-badge</code><br>
+emoji:no-bell[2x] <code class="small">no-bell</code><br>
+emoji:nut-and-bolt[2x] <code class="small">nut-and-bolt</code><br>
+emoji:orange-book[2x] <code class="small">orange-book</code><br>
+emoji:page-with-curl[2x] <code class="small">page-with-curl</code><br>
+emoji:peach[2x] <code class="small">peach</code><br>
+emoji:phone[2x] <code class="small">phone</code><br>
+emoji:pizza[2x] <code class="small">pizza</code><br>
+emoji:pouch[2x] <code class="small">pouch</code><br>
+emoji:purse[2x] <code class="small">purse</code><br>
+emoji:ramen[2x] <code class="small">ramen</code><br>
+emoji:rice-ball[2x] <code class="small">rice-ball</code><br>
+emoji:rugby-football[2x] <code class="small">rugby-football</code><br>
+emoji:sandal[2x] <code class="small">sandal</code><br>
+emoji:scissors[2x] <code class="small">scissors</code><br>
+emoji:shaved-ice[2x] <code class="small">shaved-ice</code><br>
+emoji:ski[2x] <code class="small">ski</code><br>
+emoji:soccer[2x] <code class="small">soccer</code><br>
+emoji:spades[2x] <code class="small">spades</code><br>
+emoji:stew[2x] <code class="small">stew</code><br>
+emoji:surfer[2x] <code class="small">surfer</code><br>
+emoji:swimmer[2x] <code class="small">swimmer</code><br>
+emoji:tanabata-tree[2x] <code class="small">tanabata-tree</code><br>
+emoji:telephone-receiver[2x] <code class="small">telephone-receiver</code><br>
+emoji:toilet[2x] <code class="small">toilet</code><br>
+emoji:triangular-ruler[2x] <code class="small">triangular-ruler</code><br>
+emoji:trumpet[2x] <code class="small">trumpet</code><br>
+emoji:vhs[2x] <code class="small">vhs</code><br>
+emoji:violin[2x] <code class="small">violin</code><br>
+emoji:wine-glass[2x] <code class="small">wine-glass</code><br>
+emoji:wrench[2x] <code class="small">wrench</code><br></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_places"><a class="anchor" href="#_places"></a>Places</h3>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:aerial-tramway[2x] <code class="small">aerial-tramway</code><br>
+emoji:anchor[2x] <code class="small">anchor</code><br>
+emoji:bank[2x] <code class="small">bank</code><br>
+emoji:bike[2x] <code class="small">bike</code><br>
+emoji:bridge-at-night[2x] <code class="small">bridge-at-night</code><br>
+emoji:bus[2x] <code class="small">bus</code><br>
+emoji:carousel-horse[2x] <code class="small">carousel-horse</code><br>
+emoji:circus-tent[2x] <code class="small">circus-tent</code><br>
+emoji:construction[2x] <code class="small">construction</code><br>
+emoji:department-store[2x] <code class="small">department-store</code><br>
+emoji:factory[2x] <code class="small">factory</code><br>
+emoji:fountain[2x] <code class="small">fountain</code><br>
+emoji:hospital[2x] <code class="small">hospital</code><br>
+emoji:house[2x] <code class="small">house</code><br>
+emoji:japanese-castle[2x] <code class="small">japanese-castle</code><br>
+emoji:minibus[2x] <code class="small">minibus</code><br>
+emoji:mountain-cableway[2x] <code class="small">mountain-cableway</code><br>
+emoji:office[2x] <code class="small">office</code><br>
+emoji:oncoming-police-car[2x] <code class="small">oncoming-police-car</code><br>
+emoji:police-car[2x] <code class="small">police-car</code><br>
+emoji:rainbow[2x] <code class="small">rainbow</code><br>
+emoji:rotating-light[2x] <code class="small">rotating-light</code><br>
+emoji:school[2x] <code class="small">school</code><br>
+emoji:speedboat[2x] <code class="small">speedboat</code><br>
+emoji:statue-of-liberty[2x] <code class="small">statue-of-liberty</code><br>
+emoji:sunrise-over-mountains[2x] <code class="small">sunrise-over-mountains</code><br>
+emoji:tent[2x] <code class="small">tent</code><br>
+emoji:tractor[2x] <code class="small">tractor</code><br>
+emoji:tram[2x] <code class="small">tram</code><br>
+emoji:truck[2x] <code class="small">truck</code><br>
+emoji:wedding[2x] <code class="small">wedding</code><br>
+emoji:cn[2x] <code class="small">cn</code><br>
+emoji:es[2x] <code class="small">es</code><br>
+emoji:gb[2x] <code class="small">gb</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:airplane[2x] <code class="small">airplane</code><br>
+emoji:articulated-lorry[2x] <code class="small">articulated-lorry</code><br>
+emoji:barber[2x] <code class="small">barber</code><br>
+emoji:blue-car[2x] <code class="small">blue-car</code><br>
+emoji:bullettrain-front[2x] <code class="small">bullettrain-front</code><br>
+emoji:busstop[2x] <code class="small">busstop</code><br>
+emoji:checkered-flag[2x] <code class="small">checkered-flag</code><br>
+emoji:city-sunrise[2x] <code class="small">city-sunrise</code><br>
+emoji:convenience-store[2x] <code class="small">convenience-store</code><br>
+emoji:european-castle[2x] <code class="small">european-castle</code><br>
+emoji:ferris-wheel[2x] <code class="small">ferris-wheel</code><br>
+emoji:fuelpump[2x] <code class="small">fuelpump</code><br>
+emoji:hotel[2x] <code class="small">hotel</code><br>
+emoji:house-with-garden[2x] <code class="small">house-with-garden</code><br>
+emoji:light-rail[2x] <code class="small">light-rail</code><br>
+emoji:monorail[2x] <code class="small">monorail</code><br>
+emoji:mountain-railway[2x] <code class="small">mountain-railway</code><br>
+emoji:oncoming-automobile[2x] <code class="small">oncoming-automobile</code><br>
+emoji:oncoming-taxi[2x] <code class="small">oncoming-taxi</code><br>
+emoji:post-office[2x] <code class="small">post-office</code><br>
+emoji:rocket[2x] <code class="small">rocket</code><br>
+emoji:round-pushpin[2x] <code class="small">round-pushpin</code><br>
+emoji:ship[2x] <code class="small">ship</code><br>
+emoji:stars[2x] <code class="small">stars</code><br>
+emoji:steam-locomotive[2x] <code class="small">steam-locomotive</code><br>
+emoji:suspension-railway[2x] <code class="small">suspension-railway</code><br>
+emoji:ticket[2x] <code class="small">ticket</code><br>
+emoji:traffic-light[2x] <code class="small">traffic-light</code><br>
+emoji:triangular-flag-on-post[2x] <code class="small">triangular-flag-on-post</code><br>
+emoji:vertical-traffic-light[2x] <code class="small">vertical-traffic-light</code><br>
+emoji:jp[2x] <code class="small">jp</code><br>
+emoji:us[2x] <code class="small">us</code><br>
+emoji:it[2x] <code class="small">it</code><br>
+emoji:de[2x] <code class="small">de</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:ambulance[2x] <code class="small">ambulance</code><br>
+emoji:atm[2x] <code class="small">atm</code><br>
+emoji:beginner[2x] <code class="small">beginner</code><br>
+emoji:boat[2x] <code class="small">boat</code><br>
+emoji:bullettrain-side[2x] <code class="small">bullettrain-side</code><br>
+emoji:car[2x] <code class="small">car</code><br>
+emoji:church[2x] <code class="small">church</code><br>
+emoji:city-sunset[2x] <code class="small">city-sunset</code><br>
+emoji:crossed-flags[2x] <code class="small">crossed-flags</code><br>
+emoji:european-post-office[2x] <code class="small">european-post-office</code><br>
+emoji:fire-engine[2x] <code class="small">fire-engine</code><br>
+emoji:helicopter[2x] <code class="small">helicopter</code><br>
+emoji:hotsprings[2x] <code class="small">hotsprings</code><br>
+emoji:japan[2x] <code class="small">japan</code><br>
+emoji:love-hotel[2x] <code class="small">love-hotel</code><br>
+emoji:mount-fuji[2x] <code class="small">mount-fuji</code><br>
+emoji:moyai[2x] <code class="small">moyai</code><br>
+emoji:oncoming-bus[2x] <code class="small">oncoming-bus</code><br>
+emoji:performing-arts[2x] <code class="small">performing-arts</code><br>
+emoji:railway-car[2x] <code class="small">railway-car</code><br>
+emoji:roller-coaster[2x] <code class="small">roller-coaster</code><br>
+emoji:rowboat[2x] <code class="small">rowboat</code><br>
+emoji:slot-machine[2x] <code class="small">slot-machine</code><br>
+emoji:station[2x] <code class="small">station</code><br>
+emoji:sunrise[2x] <code class="small">sunrise</code><br>
+emoji:taxi[2x] <code class="small">taxi</code><br>
+emoji:tokyo-tower[2x] <code class="small">tokyo-tower</code><br>
+emoji:train2[2x] <code class="small">train2</code><br>
+emoji:trolleybus[2x] <code class="small">trolleybus</code><br>
+emoji:warning[2x] <code class="small">warning</code><br>
+emoji:kr[2x] <code class="small">kr</code><br>
+emoji:fr[2x] <code class="small">fr</code><br>
+emoji:ru[2x] <code class="small">ru</code><br></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_symbols"><a class="anchor" href="#_symbols"></a>Symbols</h3>
+<table class="tableblock frame-none grid-none stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:100[2x] <code class="small">100</code><br>
+emoji:ab[2x] <code class="small">ab</code><br>
+emoji:accept[2x] <code class="small">accept</code><br>
+emoji:arrow-backward[2x] <code class="small">arrow-backward</code><br>
+emoji:arrow-down[2x] <code class="small">arrow-down</code><br>
+emoji:arrow-heading-down[2x] <code class="small">arrow-heading-down</code><br>
+emoji:arrow-lower-left[2x] <code class="small">arrow-lower-left</code><br>
+emoji:arrow-right-hook[2x] <code class="small">arrow-right-hook</code><br>
+emoji:arrow-up-small[2x] <code class="small">arrow-up-small</code><br>
+emoji:arrows-clockwise[2x] <code class="small">arrows-clockwise</code><br>
+emoji:baby-symbol[2x] <code class="small">baby-symbol</code><br>
+emoji:bangbang[2x] <code class="small">bangbang</code><br>
+emoji:cancer[2x] <code class="small">cancer</code><br>
+emoji:chart[2x] <code class="small">chart</code><br>
+emoji:cl[2x] <code class="small">cl</code><br>
+emoji:clock1030[2x] <code class="small">clock1030</code><br>
+emoji:clock12[2x] <code class="small">clock12</code><br>
+emoji:clock2[2x] <code class="small">clock2</code><br>
+emoji:clock330[2x] <code class="small">clock330</code><br>
+emoji:clock5[2x] <code class="small">clock5</code><br>
+emoji:clock630[2x] <code class="small">clock630</code><br>
+emoji:clock8[2x] <code class="small">clock8</code><br>
+emoji:clock930[2x] <code class="small">clock930</code><br>
+emoji:copyright[2x] <code class="small">copyright</code><br>
+emoji:customs[2x] <code class="small">customs</code><br>
+emoji:eight[2x] <code class="small">eight</code><br>
+emoji:end[2x] <code class="small">end</code><br>
+emoji:four[2x] <code class="small">four</code><br>
+emoji:hash[2x] <code class="small">hash</code><br>
+emoji:heavy-division-sign[2x] <code class="small">heavy-division-sign</code><br>
+emoji:heavy-multiplication-x[2x] <code class="small">heavy-multiplication-x</code><br>
+emoji:ideograph-advantage[2x] <code class="small">ideograph-advantage</code><br>
+emoji:keycap-ten[2x] <code class="small">keycap-ten</code><br>
+emoji:large-blue-diamond[2x] <code class="small">large-blue-diamond</code><br>
+emoji:left-right-arrow[2x] <code class="small">left-right-arrow</code><br>
+emoji:libra[2x] <code class="small">libra</code><br>
+emoji:mens[2x] <code class="small">mens</code><br>
+emoji:negative-squared-cross-mark[2x] <code class="small">negative-squared-cross-mark</code><br>
+emoji:nine[2x] <code class="small">nine</code><br>
+emoji:no-entry-sign[2x] <code class="small">no-entry-sign</code><br>
+emoji:no-smoking[2x] <code class="small">no-smoking</code><br>
+emoji:o2[2x] <code class="small">o2</code><br>
+emoji:one[2x] <code class="small">one</code><br>
+emoji:part-alternation-mark[2x] <code class="small">part-alternation-mark</code><br>
+emoji:potable-water[2x] <code class="small">potable-water</code><br>
+emoji:recycle[2x] <code class="small">recycle</code><br>
+emoji:repeat[2x] <code class="small">repeat</code><br>
+emoji:rewind[2x] <code class="small">rewind</code><br>
+emoji:scorpius[2x] <code class="small">scorpius</code><br>
+emoji:signal-strength[2x] <code class="small">signal-strength</code><br>
+emoji:small-blue-diamond[2x] <code class="small">small-blue-diamond</code><br>
+emoji:small-red-triangle-down[2x] <code class="small">small-red-triangle-down</code><br>
+emoji:symbols[2x] <code class="small">symbols</code><br>
+emoji:tm[2x] <code class="small">tm</code><br>
+emoji:twisted-rightwards-arrows[2x] <code class="small">twisted-rightwards-arrows</code><br>
+emoji:u5408[2x] <code class="small">u5408</code><br>
+emoji:u6708[2x] <code class="small">u6708</code><br>
+emoji:u7121[2x] <code class="small">u7121</code><br>
+emoji:u7a7a[2x] <code class="small">u7a7a</code><br>
+emoji:vibration-mode[2x] <code class="small">vibration-mode</code><br>
+emoji:wavy-dash[2x] <code class="small">wavy-dash</code><br>
+emoji:white-check-mark[2x] <code class="small">white-check-mark</code><br>
+emoji:white-square-button[2x] <code class="small">white-square-button</code><br>
+emoji:zero[2x] <code class="small">zero</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:1234[2x] <code class="small">1234</code><br>
+emoji:abc[2x] <code class="small">abc</code><br>
+emoji:aquarius[2x] <code class="small">aquarius</code><br>
+emoji:arrow-double-down[2x] <code class="small">arrow-double-down</code><br>
+emoji:arrow-down-small[2x] <code class="small">arrow-down-small</code><br>
+emoji:arrow-heading-up[2x] <code class="small">arrow-heading-up</code><br>
+emoji:arrow-lower-right[2x] <code class="small">arrow-lower-right</code><br>
+emoji:arrow-up[2x] <code class="small">arrow-up</code><br>
+emoji:arrow-upper-left[2x] <code class="small">arrow-upper-left</code><br>
+emoji:arrows-counterclockwise[2x] <code class="small">arrows-counterclockwise</code><br>
+emoji:baggage-claim[2x] <code class="small">baggage-claim</code><br>
+emoji:black-circle[2x] <code class="small">black-circle</code><br>
+emoji:capital-abcd[2x] <code class="small">capital-abcd</code><br>
+emoji:children-crossing[2x] <code class="small">children-crossing</code><br>
+emoji:clock1[2x] <code class="small">clock1</code><br>
+emoji:clock11[2x] <code class="small">clock11</code><br>
+emoji:clock1230[2x] <code class="small">clock1230</code><br>
+emoji:clock230[2x] <code class="small">clock230</code><br>
+emoji:clock4[2x] <code class="small">clock4</code><br>
+emoji:clock530[2x] <code class="small">clock530</code><br>
+emoji:clock7[2x] <code class="small">clock7</code><br>
+emoji:clock830[2x] <code class="small">clock830</code><br>
+emoji:congratulations[2x] <code class="small">congratulations</code><br>
+emoji:curly-loop[2x] <code class="small">curly-loop</code><br>
+emoji:diamond-shape-with-a-dot-inside[2x] <code class="small">diamond-shape-with-a-dot-inside</code><br>
+emoji:eight-pointed-black-star[2x] <code class="small">eight-pointed-black-star</code><br>
+emoji:fast-forward[2x] <code class="small">fast-forward</code><br>
+emoji:free[2x] <code class="small">free</code><br>
+emoji:heart-decoration[2x] <code class="small">heart-decoration</code><br>
+emoji:heavy-dollar-sign[2x] <code class="small">heavy-dollar-sign</code><br>
+emoji:heavy-plus-sign[2x] <code class="small">heavy-plus-sign</code><br>
+emoji:information-source[2x] <code class="small">information-source</code><br>
+emoji:koko[2x] <code class="small">koko</code><br>
+emoji:large-orange-diamond[2x] <code class="small">large-orange-diamond</code><br>
+emoji:leftwards-arrow-with-hook[2x] <code class="small">leftwards-arrow-with-hook</code><br>
+emoji:link[2x] <code class="small">link</code><br>
+emoji:metro[2x] <code class="small">metro</code><br>
+emoji:new[2x] <code class="small">new</code><br>
+emoji:no-bicycles[2x] <code class="small">no-bicycles</code><br>
+emoji:no-mobile-phones[2x] <code class="small">no-mobile-phones</code><br>
+emoji:non-potable-water[2x] <code class="small">non-potable-water</code><br>
+emoji:ok[2x] <code class="small">ok</code><br>
+emoji:ophiuchus[2x] <code class="small">ophiuchus</code><br>
+emoji:passport-control[2x] <code class="small">passport-control</code><br>
+emoji:put-litter-in-its-place[2x] <code class="small">put-litter-in-its-place</code><br>
+emoji:red-circle[2x] <code class="small">red-circle</code><br>
+emoji:repeat-one[2x] <code class="small">repeat-one</code><br>
+emoji:sa[2x] <code class="small">sa</code><br>
+emoji:secret[2x] <code class="small">secret</code><br>
+emoji:six[2x] <code class="small">six</code><br>
+emoji:small-orange-diamond[2x] <code class="small">small-orange-diamond</code><br>
+emoji:soon[2x] <code class="small">soon</code><br>
+emoji:taurus[2x] <code class="small">taurus</code><br>
+emoji:top[2x] <code class="small">top</code><br>
+emoji:two[2x] <code class="small">two</code><br>
+emoji:u55b6[2x] <code class="small">u55b6</code><br>
+emoji:u6709[2x] <code class="small">u6709</code><br>
+emoji:u7533[2x] <code class="small">u7533</code><br>
+emoji:underage[2x] <code class="small">underage</code><br>
+emoji:virgo[2x] <code class="small">virgo</code><br>
+emoji:wc[2x] <code class="small">wc</code><br>
+emoji:white-circle[2x] <code class="small">white-circle</code><br>
+emoji:womens[2x] <code class="small">womens</code><br></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>emoji:a[2x] <code class="small">a</code><br>
+emoji:abcd[2x] <code class="small">abcd</code><br>
+emoji:aries[2x] <code class="small">aries</code><br>
+emoji:arrow-double-up[2x] <code class="small">arrow-double-up</code><br>
+emoji:arrow-forward[2x] <code class="small">arrow-forward</code><br>
+emoji:arrow-left[2x] <code class="small">arrow-left</code><br>
+emoji:arrow-right[2x] <code class="small">arrow-right</code><br>
+emoji:arrow-up-down[2x] <code class="small">arrow-up-down</code><br>
+emoji:arrow-upper-right[2x] <code class="small">arrow-upper-right</code><br>
+emoji:b[2x] <code class="small">b</code><br>
+emoji:ballot-box-with-check[2x] <code class="small">ballot-box-with-check</code><br>
+emoji:black-square-button[2x] <code class="small">black-square-button</code><br>
+emoji:capricorn[2x] <code class="small">capricorn</code><br>
+emoji:cinema[2x] <code class="small">cinema</code><br>
+emoji:clock10[2x] <code class="small">clock10</code><br>
+emoji:clock1130[2x] <code class="small">clock1130</code><br>
+emoji:clock130[2x] <code class="small">clock130</code><br>
+emoji:clock3[2x] <code class="small">clock3</code><br>
+emoji:clock430[2x] <code class="small">clock430</code><br>
+emoji:clock6[2x] <code class="small">clock6</code><br>
+emoji:clock730[2x] <code class="small">clock730</code><br>
+emoji:clock9[2x] <code class="small">clock9</code><br>
+emoji:cool[2x] <code class="small">cool</code><br>
+emoji:currency-exchange[2x] <code class="small">currency-exchange</code><br>
+emoji:do-not-litter[2x] <code class="small">do-not-litter</code><br>
+emoji:eight-spoked-asterisk[2x] <code class="small">eight-spoked-asterisk</code><br>
+emoji:five[2x] <code class="small">five</code><br>
+emoji:gemini[2x] <code class="small">gemini</code><br>
+emoji:heavy-check-mark[2x] <code class="small">heavy-check-mark</code><br>
+emoji:heavy-minus-sign[2x] <code class="small">heavy-minus-sign</code><br>
+emoji:id[2x] <code class="small">id</code><br>
+emoji:interrobang[2x] <code class="small">interrobang</code><br>
+emoji:large-blue-circle[2x] <code class="small">large-blue-circle</code><br>
+emoji:left-luggage[2x] <code class="small">left-luggage</code><br>
+emoji:leo[2x] <code class="small">leo</code><br>
+emoji:m[2x] <code class="small">m</code><br>
+emoji:mobile-phone-off[2x] <code class="small">mobile-phone-off</code><br>
+emoji:ng[2x] <code class="small">ng</code><br>
+emoji:no-entry[2x] <code class="small">no-entry</code><br>
+emoji:no-pedestrians[2x] <code class="small">no-pedestrians</code><br>
+emoji:o[2x] <code class="small">o</code><br>
+emoji:on[2x] <code class="small">on</code><br>
+emoji:parking[2x] <code class="small">parking</code><br>
+emoji:pisces[2x] <code class="small">pisces</code><br>
+emoji:radio-button[2x] <code class="small">radio-button</code><br>
+emoji:registered[2x] <code class="small">registered</code><br>
+emoji:restroom[2x] <code class="small">restroom</code><br>
+emoji:sagittarius[2x] <code class="small">sagittarius</code><br>
+emoji:seven[2x] <code class="small">seven</code><br>
+emoji:six-pointed-star[2x] <code class="small">six-pointed-star</code><br>
+emoji:small-red-triangle[2x] <code class="small">small-red-triangle</code><br>
+emoji:sos[2x] <code class="small">sos</code><br>
+emoji:three[2x] <code class="small">three</code><br>
+emoji:trident[2x] <code class="small">trident</code><br>
+emoji:u5272[2x] <code class="small">u5272</code><br>
+emoji:u6307[2x] <code class="small">u6307</code><br>
+emoji:u6e80[2x] <code class="small">u6e80</code><br>
+emoji:u7981[2x] <code class="small">u7981</code><br>
+emoji:up[2x] <code class="small">up</code><br>
+emoji:vs[2x] <code class="small">vs</code><br>
+emoji:wheelchair[2x] <code class="small">wheelchair</code><br>
+emoji:white-flower[2x] <code class="small">white-flower</code><br>
+emoji:x[2x] <code class="small">x</code><br></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
