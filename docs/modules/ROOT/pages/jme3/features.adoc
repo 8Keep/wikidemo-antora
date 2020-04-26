@@ -1,0 +1,303 @@
+= jMonkeyEngine 3.0 Feature Overview
+:author:
+:revnumber:
+:revdate: 2016/03/17 20:48
+:relfileprefix: ../
+:imagesdir: ..
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+
+
+See also: <<jme3/requirements#,requirements>>.
+
+
+== Software Development Kit: jMonkeyEngine SDK
+
+*  <<sdk/project_creation#,Creates jME3-ready Java projects>>
+**  Preconfigured classpath
+**  Bundled with compatible JDK
+**  <<jme3/advanced/asset_manager#,Asset Manager>> for loading multi-media files and 3D models including asset name code completion
+**  <<sdk/default_build_script#,Non-proprietary Ant build scripts>>
+**  jME3-ready Javadoc popups, <<sdk/sample_code#,sample code projects>>, and code snippet palette
+
+*  <<sdk/code_editor#,Full-featured Java and XML code editor>>
+*  <<sdk/update_center#,Plugins>>
+**  <<sdk/version_control#,File Version Control>>
+**  <<sdk/debugging_profiling_testing#,Debugger and Profiler (optional)>>
+**  <<sdk/model_loader_and_viewer#,Converters and Importers for game assets (3D models etc)>>
+**  <<sdk/scene_composer#,3D Scene Viewer and Scene Composer>>
+**  <<sdk/material_editing#,Material editor>>
+**  Shader Node editor
+**  <<sdk/terrain_editor#,Terrain generation, painting, and editing>>
+**  <<jme3/external/fonts#,Custom font creator>>
+**  <<sdk/neotexture#,Procedural texture creator (NeoTexture)>>
+**  <<jme3/advanced/level_of_detail#,Level of Detail (LOD) generator>>
+**  <<sdk#,... and much more...>>
+
+*  <<sdk/application_deployment#,Deployment>>
+**  Generates desktop executables for Win, Mac, Linux
+**  Generates mobile executables for <<jme3/android#,Android>>, iOS support is in the works.
+**  Generates JNLP WebStart and Java Browser Applets
+
+*  <<sdk/whynoteclipse#,Based on the NetBeans Platform>>
+**  Supports all NetBeans IDE plugins
+
+
+
+== Physics
+
+*  <<jme3/advanced/physics#,JBullet physics binding>>
+**  <<jme3/advanced/walking_character#,Physical characters>>
+**  <<jme3/advanced/hinges_and_joints#,Physical joints and hinges>>
+**  <<jme3/advanced/vehicles#,Ray-cast vehicle>>
+**  <<jme3/advanced/ragdoll#,Ragdoll physics>>
+
+*  <<jme3/advanced/bullet_multithreading#,Multi-threaded physics>>
+*  <<jme3/advanced/physics#create_a_collisionshape,Mesh-accurate collision shapes>>
+
+
+== Supported Formats
+
+=== jMonkeyEngine3 File Formats
+[cols="10,65,25", options="header"]
+|===
+
+a|Suffix
+a|Usage
+a|Learn more
+
+l|.j3o
+a|Binary 3D model or scene. At the latest from the Beta release of your game on, you should convert all models to .j3o format. +
+During alpha and earlier development phases (when models still change a lot) you can alternatively load GLTF/OBJ models directly.
+a|<<sdk/model_loader_and_viewer#,Model Loader and Viewer>>
+
+l|.j3m
+a|A custom Material. You can create a .j3m file to store a Material configuration for a Geometry (e.g. 3D model).
+a|<<jme3/advanced/materials_overview#,Materials Overview>> +
+<<sdk/material_editing#,Material Editing>>
+
+l|.j3md
+a|A Material definition. These are pre-defined templates for shader-based Materials. +
+Each custom .j3m Material is based on a material definition. Advanced users can create their own material definitions.
+a| <<jme3/advanced/materials_overview#,Materials Overview>>
+
+l|.j3f
+a|A custom post-processor filter configuration. You can create a .j3f file to store a FilterPostProcessor with a set of preconfigured filters.
+a| <<sdk/filters#,Filters>> +
+<<jme3/advanced/effects_overview#,Effects Overview>>
+
+|===
+
+=== Supported External File Types
+
+[cols="40,15,45", options="header"]
+|===
+
+a|File Suffix
+a|Type
+a|Description
+
+l|.mesh.xml, .meshxml, .scene
+a|3D model
+a|Ogre Mesh XML *(soon to be discontinued)* +
+see:
+
+* <<jme3/external/blender/blender_ogre_export#,Exporting Models as Ogre XML meshes from Blender>>
+* <<jme3/external/blender/blender_ogre_compatibility#,Ogre Compatibility>>
+
+Converting to j3o:
+
+* <<sdk/model_loader_and_viewer#,SDK convert>>
+* link:{link-javadoc}/com/jme3/export/binary/BinaryExporter.html[BinaryExporter]
+
+l|.obj, .mtl
+a|3D model
+a|Wavefront +
+Converting to j3o:
+
+* <<sdk/model_loader_and_viewer#,SDK convert>>
+* link:{link-javadoc}/com/jme3/export/binary/BinaryExporter.html[BinaryExporter]
+
+l|.xbuf
+a|3D model
+a|Blender version 2.74 +
+See:
+
+* link:https://hub.jmonkeyengine.org/t/xbuf-format-a-developer-friendly-game-exchange-format-for-3d-data/31130[.xbuf] forum post.
+
+Converting to j3o:
+
+* <<sdk/model_loader_and_viewer#,SDK convert>>
+* link:{link-javadoc}/com/jme3/export/binary/BinaryExporter.html[BinaryExporter]
+
+l|.fbx
+a|3D model
+a|Filmbox +
+See:
+
+* link:https://hub.jmonkeyengine.org/t/fbx-importer/30309[Fbx importer] forum post.
+
+Converting to j3o:
+
+* <<sdk/model_loader_and_viewer#,SDK convert>>
+* link:{link-javadoc}/com/jme3/export/binary/BinaryExporter.html[BinaryExporter]
+
+l|.gltf, .bin, .glb, custom extensions
+a|3D model
+a|Blender version 2.78c onwards, +
+See:
+
+* link:https://hub.jmonkeyengine.org/t/jme-gltf-support/39174[gltf] forum post
+* <<jme3/external/blender/blender_gltf#,Exporting Models as GlTF meshes from Blender>>
+
+Converting to j3o:
+
+* link:https://hub.jmonkeyengine.org/t/jmeconvert-tool/41831[JmeConvert tool]
+* <<sdk/model_loader_and_viewer#,SDK convert>>
+* link:{link-javadoc}/com/jme3/export/binary/BinaryExporter.html[BinaryExporter]
+
+l|.jpg, .png, .gif
+a|image
+a|Textures, icons
+
+l|.dds
+a|image
+a|Direct Draw Surface texture
+
+l|.hdr
+a|image
+a|High Dynamic Range texture
+
+l|.tga
+a|image
+a|Targa Image File texture
+
+l|.pfm
+a|image
+a|Portable Float Map texture
+
+l|.bmp
+a|image
+a|Bitmap texture
+
+l|.ani, .cur, .ico
+a|image
+a|Windows Cursor, static or animated.
+
+l|.fnt
+a|bitmap font
+a|AngelCode font for +++<abbr title="Graphical User Interface">GUI</abbr>+++ and HUD
+
+l|.wav
+a|audio
+a|Wave music and sounds
+
+l|.ogg
+a|audio
+a|OGG Vorbis music and sounds
+
+|===
+
+
+== Shaders
+
+*  GLSL support
+*  Shader libraries
+*  Shader permutations
+*  <<jme3/advanced/jme3_shadernodes#,Shader Nodes>>
+
+
+== Material Lighting
+
+*  Per-pixel lighting
+*  Multi-pass lighting
+*  Phong Lighting
+**  Diffuse Map
+**  Alpha Map
+**  Glow Map
+**  Specular Map
+**  Normal Map, Parallax Map (a.k.a. bump mapping)
+
+*  Tangent shading
+*  Reflection
+
+
+== Material Textures
+
+*  Texturing
+***  material colors (ambient, diffuse, specular/shininess, glow),
+***  color map, light map,
+***  transparency, translucency, alpha map, alpha testing with falloff threshold,
+***  sphere map, cube map,
+***  texture scale,
+***  wireframe
+***  color ramp texture
+
+*  Multi-texturing through shaders
+*  UV textures
+*  Splat textures, Phong lit or unshaded, supports diffuse and normal maps
+*  link:http://hub.jmonkeyengine.org/forum/topic/textureatlas-creation-and-packed-texture-handling-in-sdk/[Texture Atlas, handling of packed Textures]
+
+
+== Asset System
+
+*  Asset importing
+**  Animation
+**  Meshes
+**  Textures
+**  Scenes
+**  Materials
+**  Shaders
+
+*  Multi-threaded asset loading via HTTP
+*  Loading scenes from .ZIP files
+*  Sharable AssetPacks
+
+
+== Special Effects
+
+*  <<jme3/advanced/particle_emitters#,Particles: Smoke, fire, explosions, etc>>
+*  <<jme3/advanced/effects_overview#,Post processing / 2D Filter Effects>>
+**  Reflective Water
+**  Shadow mapping
+**  High Dynamic Range rendering
+**  Screen Space Ambient Occlusion
+**  Light Scattering
+**  Cartoon Effect
+**  Fog
+**  Bloom
+**  Depth of Field Blur
+
+
+
+== Terrain
+
+*  <<jme3/advanced/terrain#,Geomipmapped hightmap terrain>>
+*  <<jme3/external/blender/blender_ogre_compatibility#,Ogre Compatibility>>
+*  <<jme3/advanced/sky#,SkyBox and SkyDome>>
+*  Terrain lighting
+
+
+== GUI / HUD
+
+*  <<jme3/advanced/hud#,Orthogonal (Billboard) node>>
+*  <<jme3/advanced/nifty_gui#,Nifty GUI integration>>
+
+
+== Miscellaneous
+
+*  <<jme3/advanced/application_states#,Application States>> and <<jme3/advanced/custom_controls#,Controls>> to implement <<jme3/advanced/update_loop#,game logic>>
+*  <<jme3/advanced/cinematics#,Cinematics and motion paths>>
+*  <<jme3/advanced/camera#,Camera System>>
+**  Normal or parallel view
+**  Multiple views
+
+*  Swing canvas (e.g. for Applets)
+*  <<jme3/advanced/input_handling#,Input handling>>
+**  Mouse, keyboard, joystick
+**  <<jme3/advanced/combo_moves#,Combo moves>>
+
+
+
+== Networking
+
+*  <<jme3/advanced/networking#,SpiderMonkey API>>
