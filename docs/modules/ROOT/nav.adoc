@@ -1,1 +1,0 @@
-* xref:documentation.adoc[jMonkeyEngine 3]
