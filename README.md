@@ -21,6 +21,6 @@ Static files are stored in the gh-pages branch. The `publishToGithubPages.sh` sc
 TODO (in no particular order):
 - [ ] Custom jMonkey style theme
 - [ ] Versioning
-- [ x ] Github Actions CI
+- [x] Github Actions CI
 - [ ] More testing
 - [ ] Some asciidoc code is not ported over correctly (emoji and javadoc links)
