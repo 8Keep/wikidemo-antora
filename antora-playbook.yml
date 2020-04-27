@@ -20,3 +20,6 @@ output:
   dir: ./public
 runtime:
   cache_dir: ./.cache/antora
+asciidoc:
+  extensions:
+  - asciidoctor-emoji

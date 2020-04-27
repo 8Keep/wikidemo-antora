@@ -178,6 +178,11 @@ argparse@^1.0.7:
   dependencies:
     sprintf-js "~1.0.2"
 
+asciidoctor-emoji@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/asciidoctor-emoji/-/asciidoctor-emoji-0.2.1.tgz#03c38b8d93bd43591820aec26e716da954850fa9"
+  integrity sha512-1IExap2tCjmsGg2BhFzx4K879x8wbYw5qM+JyW8D2mfa+pY+stDrtrgo5Djb+CCabjfQdp729BZ6fTuNa2h30g==
+
 asciidoctor.js@1.5.9:
   version "1.5.9"
   resolved "https://registry.yarnpkg.com/asciidoctor.js/-/asciidoctor.js-1.5.9.tgz#28f8e8ee134b82627f0240e9b6a201b3d15d9524"
