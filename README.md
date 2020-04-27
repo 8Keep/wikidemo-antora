@@ -1,3 +1,5 @@
+https://8keep.github.io/wikidemo-antora/
+
 This is a preview of an alternative interface for the jMonkeyEngine wiki.
 
 This repo contains all wiki asciidoc source files, as well as the open source software Antora to 
