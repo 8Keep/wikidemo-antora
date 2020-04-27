@@ -1,6 +1,6 @@
-name: jme3
-title: Test
-version: 1.0
+name: jme
+title: jMonkeyEngine
+version: 3.3
 start_page: ROOT:documentation.adoc
 nav:
   - modules/ROOT/nav.adoc
