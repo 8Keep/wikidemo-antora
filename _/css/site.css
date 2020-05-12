@@ -69,7 +69,7 @@
     --jme-body-font-color: var(--color-smoke-90);
     --jme-doc-font-color: var(--color-smoke-90);
     --jme-navbar-font-color: var(--color-white);
-    --jme-nav-heading-font-color: var(--color-jet-30);
+    --jme-nav-heading-font-color: var(--jme-body-font-color);
     --jme-toolbar-font-color: #var(--color-white);
     --jme-toc-font-color: var(--color-smoke-90);
     --jme-heading-font-color: var(--color-white);
