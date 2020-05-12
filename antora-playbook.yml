@@ -23,3 +23,5 @@ runtime:
 asciidoc:
   extensions:
   - asciidoctor-emoji
+  attributes:
+    page-pagination: " "
