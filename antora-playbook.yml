@@ -1,7 +1,7 @@
 site:
   title: jMonkeyEngine Documentation
   start_page: jme::documentation.adoc 
-  url: https://8keep.github.io/wikidemo-antora
+  url: https://8keep.github.io/
 content:
   sources: 
   - url: ./
