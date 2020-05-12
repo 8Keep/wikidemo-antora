@@ -22,4 +22,5 @@ TODO (in no particular order):
 - [ ] Custom jMonkey style theme
 - [ ] Versioning
 - [x] Github Actions CI
-- [ ] Some asciidoc code is not ported over correctly (emoji and javadoc links)
+- [x] Javadoc link asciidoctor attribute
+- [ ] Fix asciidoctor issues (emojis, waiting on external dependency to fix)
