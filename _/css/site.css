@@ -91,6 +91,7 @@
     --jme-toolbar-muted-color: var(--jme-toolbar-font-color);
     --jme-example-background: var(--color-jet-20);
     --jme-admonition-background: var(--color-jet-20);
+    --jme-navbar-menu-background: var(--color-jet-20);
 }
 
 [data-theme="light"] {
@@ -119,6 +120,7 @@
     --jme-toolbar-muted-color: var(--color-gray-30);
     --jme-example-background: var(--color-white);
     --jme-admonition-background: var(--panel-background);
+    --jme-navbar-menu-background: var(--color-white);
 }
 
 :root {
@@ -169,7 +171,7 @@
     --navbar-button-border-color: var(--panel-border-color);
     --navbar-button-font-color: var(--body-font-color);
     --navbar-menu-border-color: var(--panel-border-color);
-    --navbar-menu-background: var(--color-white);
+    --navbar-menu-background: var(--jme-navbar-menu-background);
     --navbar-menu-font-color: var(--body-font-color);
     --navbar-menu_hover-background: var(--color-smoke-50);
     /* nav */
@@ -836,90 +838,108 @@ input:checked + .slider::before {
 }
 
 .toolbar {
-  color: var(--jme-toolbar-font-color);
-  color: var(--toolbar-font-color);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: var(--jme-panel-background);
-  background-color: var(--toolbar-background);
-  -webkit-box-shadow: 0 1px 0 #e1e1e1;
-          box-shadow: 0 1px 0 #e1e1e1;
-  -webkit-box-shadow: 0 1px 0 var(--toolbar-border-color);
-          box-shadow: 0 1px 0 var(--toolbar-border-color);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.83333rem;
-  font-size: calc(15/var(--rem-base)*1rem);
-  height: 2.5rem;
-  height: var(--toolbar-height);
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 3.5rem;
-  top: var(--navbar-height);
-  z-index: 2;
-  z-index: var(--z-index-toolbar);
+    color: var(--jme-toolbar-font-color);
+    color: var(--toolbar-font-color);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: var(--jme-panel-background);
+    background-color: var(--toolbar-background);
+    -webkit-box-shadow: 0 1px 0 #e1e1e1;
+            box-shadow: 0 1px 0 #e1e1e1;
+    -webkit-box-shadow: 0 1px 0 var(--toolbar-border-color);
+            box-shadow: 0 1px 0 var(--toolbar-border-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0.83333rem;
+    font-size: calc(15/var(--rem-base)*1rem);
+    height: 2.5rem;
+    height: var(--toolbar-height);
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 3.5rem;
+    top: var(--navbar-height);
+    z-index: 2;
+    z-index: var(--z-index-toolbar);
 }
 
 .toolbar a {
-  color: inherit;
+    color: inherit;
 }
 
 .nav-toggle {
-  background: url(../img/menu.svg) no-repeat 50% 47.5%;
-  background-size: 49%;
-  border: none;
-  outline: none;
-  line-height: inherit;
-  height: 2.5rem;
-  padding: 0;
-  width: 2.5rem;
-  margin-right: -0.25rem;
+    background: var(--jme-menu-icon) no-repeat 50% 47.5%;
+    background-size: 49%;
+    border: none;
+    outline: none;
+    line-height: inherit;
+    height: 2.5rem;
+    padding: 0;
+    width: 2.5rem;
+    margin-right: -0.25rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .nav-toggle {
-    display: none;
-  }
+    .nav-toggle {
+        display: none;
+    }
 }
 
 .nav-toggle.is-active {
-  background-image: url(../img/back.svg);
-  background-size: 41.5%;
+    background-image: var(--jme-back-icon);
+    background-size: 41.5%;
 }
 
 .home-link {
-  background: url(../img/home-o.svg) no-repeat 50% 45%;
-  background-size: 50%;
-  display: block;
-  height: 2.5rem;
-  padding: 0;
-  width: 2.5rem;
+    background: var(--jme-home-o-icon) no-repeat 50% 45%;
+    background-size: 50%;
+    display: block;
+    height: 2.5rem;
+    padding: 0;
+    width: 2.5rem;
 }
 
 .home-link:hover,
 .home-link.is-current {
-  background-image: url(../img/home.svg);
+    background-image: var(--jme-home-icon);
 }
 
 .edit-this-page {
-  display: none;
-  padding-right: 0.5rem;
+    display: none;
+    padding-right: 0.5rem;
 }
 
 @media screen and (min-width: 1024px) {
-  .edit-this-page {
-    display: block;
-  }
+    .edit-this-page {
+        display: block;
+    }
 }
 
 .toolbar .edit-this-page a {
-  color: var(--jme-toolbar-muted-color);
-  color: var(--toolbar-muted-color);
+    color: var(--jme-toolbar-muted-color);
+    color: var(--toolbar-muted-color);
+}
+
+[data-theme="dark"] {
+    --jme-home-icon: url(../img/home_light.svg);
+    --jme-home-o-icon: url(../img/home-o_light.svg);
+    --jme-menu-icon: url(../img/menu_light.svg);
+    --jme-back-icon: url(../img/back_light.svg);
+    /* unused? came from antora default ui*/
+    --jme-close-icon: url(../img/close_light.svg);
+}
+
+[data-theme="light"] {
+    --jme-home-icon: url(../img/home.svg);
+    --jme-home-o-icon: url(../img/home-o.svg);
+    --jme-menu-icon: url(../img/menu.svg);
+    --jme-back-icon: url(../img/back.svg);
+    /* unused? came from antora default ui*/
+    --jme-close-icon: url(../img/close.svg);
 }
 
 .breadcrumbs {
@@ -2177,7 +2197,7 @@ body {
   }
 
   .navbar-menu {
-    background: #fff;
+    background: var(--jme-navbar-menu-background);
     background: var(--navbar-menu-background);
     padding: 0.5rem 0;
   }
@@ -2264,7 +2284,7 @@ body {
   }
 
   .navbar-dropdown {
-    background-color: #fff;
+    background-color: var(--jme-navbar-menu-background);
     background-color: var(--navbar-menu-background);
     border: 1px solid #e1e1e1;
     border: 1px solid var(--navbar-menu-border-color);
