@@ -909,7 +909,6 @@ input:checked + .slider::before {
 }
 
 .edit-this-page {
-    display: none;
     padding-right: 0.5rem;
 }
 
@@ -988,61 +987,60 @@ a + .breadcrumbs {
 }
 
 .page-versions {
-  display: none;
-  margin-right: 0.7rem;
-  position: relative;
-  line-height: 1;
+    margin-right: 0.7rem;
+    position: relative;
+    line-height: 1;
 }
 
 @media screen and (min-width: 1024px) {
-  .page-versions {
-    display: block;
-  }
+    .page-versions {
+        display: block;
+    }
 }
 
 .page-versions .version-menu-toggle {
-  color: inherit;
-  background: url(../img/chevron.svg) no-repeat;
-  background-position: right 0.5rem top 50%;
-  background-size: auto 0.75em;
-  border: none;
-  outline: none;
-  line-height: inherit;
-  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
-  position: relative;
-  z-index: 3;
-  z-index: var(--z-index-page-version-menu);
+    color: inherit;
+    background: url(../img/chevron.svg) no-repeat;
+    background-position: right 0.5rem top 50%;
+    background-size: auto 0.75em;
+    border: none;
+    outline: none;
+    line-height: inherit;
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    position: relative;
+    z-index: 3;
+    z-index: var(--z-index-page-version-menu);
 }
 
 .page-versions .version-menu {
-  border: 1px solid transparent;
-  background-color: var(--jme-page-version-menu-background);
-  background-color: var(--page-version-menu-background);
-  padding: 1.25rem 0.5rem 0.5rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+    border: 1px solid transparent;
+    background-color: var(--jme-page-version-menu-background);
+    background-color: var(--page-version-menu-background);
+    padding: 1.25rem 0.5rem 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
 .page-versions:not(.is-active) .version-menu {
-  display: none;
+    display: none;
 }
 
 .page-versions .version {
-  display: block;
-  padding-top: 0.5rem;
+    display: block;
+    padding-top: 0.5rem;
 }
 
 .page-versions .version.is-current {
-  display: none;
+    display: none;
 }
 
 .page-versions .version.is-missing {
-  color: #8e8e8e;
-  color: var(--page-version-missing-font-color);
-  font-style: italic;
-  text-decoration: none;
+    color: #8e8e8e;
+    color: var(--page-version-missing-font-color);
+    font-style: italic;
+    text-decoration: none;
 }
 
 .toc-menu {
