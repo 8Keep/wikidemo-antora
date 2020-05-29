@@ -180,7 +180,7 @@ emoji:anger[2x] [.small]`anger` +
 emoji:grey-exclamation[2x] [.small]`grey-exclamation` +
 emoji:dash[2x] [.small]`dash` +
 emoji:musical-note[2x] [.small]`musical-note` +
-emoji:thumbsup[2x] [.small]`thumbsup` +
+emoji:+1[2x] [.small]`+1` +
 emoji:punch[2x] [.small]`punch` +
 emoji:wave[2x] [.small]`wave` +
 emoji:point-up[2x] [.small]`point-up` +
@@ -923,7 +923,7 @@ emoji:heavy-minus-sign[2x] [.small]`heavy-minus-sign` +
 emoji:id[2x] [.small]`id` +
 emoji:interrobang[2x] [.small]`interrobang` +
 emoji:large-blue-circle[2x] [.small]`large-blue-circle` +
-emoji:left-luggage[2x] [.small]`left-luggage` +
+emoji:left_luggage[2x] [.small]`left-luggage` +
 emoji:leo[2x] [.small]`leo` +
 emoji:m[2x] [.small]`m` +
 emoji:mobile-phone-off[2x] [.small]`mobile-phone-off` +
@@ -934,7 +934,7 @@ emoji:o[2x] [.small]`o` +
 emoji:on[2x] [.small]`on` +
 emoji:parking[2x] [.small]`parking` +
 emoji:pisces[2x] [.small]`pisces` +
-emoji:radio-button[2x] [.small]`radio-button` +
+emoji:radio_button[2x] [.small]`radio-button` +
 emoji:registered[2x] [.small]`registered` +
 emoji:restroom[2x] [.small]`restroom` +
 emoji:sagittarius[2x] [.small]`sagittarius` +

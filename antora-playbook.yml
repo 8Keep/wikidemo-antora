@@ -9,7 +9,7 @@ content:
     braches: HEAD
 ui: 
   bundle:
-    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/master/raw/build/ui-bundle.zip?job=bundle-stable
+    url: ./uibundle/ui-bundle.zip
     snapshot: true
   supplemental_files:
   - path: .nojekyll
@@ -23,3 +23,5 @@ runtime:
 asciidoc:
   extensions:
   - asciidoctor-emoji
+  attributes:
+    page-pagination: " "

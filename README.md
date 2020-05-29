@@ -16,11 +16,11 @@ yarn antora
 ```
 This will install the needed dependencies and run the static site generator.
 
-Static files are stored in the gh-pages branch. The `publishToGithubPages.sh` script is used to automatically transfer the `public/` directory from the master branch to the gh-pages branch.
+Static files are stored in the gh-pages branch. Github actions is used to automatically update the gh-pages branch.
 
 TODO (in no particular order):
 - [ ] Custom jMonkey style theme
 - [ ] Versioning
 - [x] Github Actions CI
-- [ ] More testing
-- [ ] Some asciidoc code is not ported over correctly (emoji and javadoc links)
+- [x] Javadoc link asciidoctor attribute
+- [ ] Fix asciidoctor issues (emojis, waiting on external dependency to fix)
